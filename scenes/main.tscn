@@ -1,3 +1,56 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[node name="Node2D" type="Node2D" unique_id=1222739125]
+[ext_resource type="Texture2D" uid="uid://cly1y6575uph0" path="res://Textures/env/bw-pattern.png" id="1_r150o"]
+[ext_resource type="Script" uid="uid://f013yeckkdsh" path="res://Scripts/player.gd" id="2_idj7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
+size = Vector2(633.9111, 4413)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
+size = Vector2(5060, 561)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bo1nx"]
+radius = 650.0
+
+[node name="Root" type="Node2D" unique_id=1222739125]
+
+[node name="BorderRight" type="StaticBody2D" parent="." unique_id=348396444]
+position = Vector2(2245, 735)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight" unique_id=269646424]
+position = Vector2(-43.955566, -675.50006)
+shape = SubResource("RectangleShape2D_idj7w")
+
+[node name="BorderTop" type="StaticBody2D" parent="." unique_id=47767415]
+position = Vector2(-141, -2162)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop" unique_id=1670731865]
+position = Vector2(147, 6)
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="BorderBottom" type="StaticBody2D" parent="." unique_id=473771372]
+position = Vector2(-141, 2177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom" unique_id=1971986961]
+position = Vector2(147, 6)
+shape = SubResource("RectangleShape2D_kln2b")
+
+[node name="BorderLeft2" type="StaticBody2D" parent="." unique_id=683200005]
+position = Vector2(-2154, 735)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft2" unique_id=1084581592]
+position = Vector2(-43.955566, -675.50006)
+shape = SubResource("RectangleShape2D_idj7w")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1043730738]
+scale = Vector2(3.6894534, 3.6894531)
+texture = ExtResource("1_r150o")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1614125707]
+script = ExtResource("2_idj7w")
+move_speed = 30.0
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=521164337]
+
+[node name="Collider" type="CollisionShape2D" parent="Player" unique_id=2071599093]
+shape = SubResource("CircleShape2D_bo1nx")
