@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="Script" uid="uid://f013yeckkdsh" path="res://Scripts/player.gd" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/Player.tscn" id="1_rgh2o"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/dirt.jpg" id="2_kln2b"]
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="3_kln2b"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bo1nx"]
-radius = 650.0
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_pbw6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -17,73 +15,70 @@ size = Vector2(5060, 561)
 shader = ExtResource("3_kln2b")
 shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
 shader_parameter/offset = Vector2(0.14, 0.08)
-shader_parameter/eye_radius = 0.08
+shader_parameter/eye_radius = 0.1
 shader_parameter/eye_falloff = 0.01
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1614125707]
-script = ExtResource("2_idj7w")
-move_speed = 30.0
+[node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_rgh2o")]
 
-[node name="Camera" type="Camera2D" parent="Player" unique_id=521164337]
+[node name="Env" type="Node2D" parent="." unique_id=1379805591]
 
-[node name="Collider" type="CollisionShape2D" parent="Player" unique_id=2071599093]
-shape = SubResource("CircleShape2D_bo1nx")
-
-[node name="Level" type="Node2D" parent="." unique_id=1379805591]
-
-[node name="BorderRight" type="StaticBody2D" parent="Level" unique_id=348396444]
+[node name="BorderRight" type="StaticBody2D" parent="Env" unique_id=348396444]
 position = Vector2(2270, 751)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BorderRight" unique_id=269646424]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderRight" unique_id=269646424]
 position = Vector2(-421, -676)
 shape = SubResource("RectangleShape2D_idj7w")
 
-[node name="BorderTop" type="StaticBody2D" parent="Level" unique_id=47767415]
+[node name="BorderTop" type="StaticBody2D" parent="Env" unique_id=47767415]
 position = Vector2(-141, -2162)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BorderTop" unique_id=1670731865]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderTop" unique_id=1670731865]
 position = Vector2(147, 346)
 shape = SubResource("RectangleShape2D_kln2b")
 
-[node name="BorderBottom" type="StaticBody2D" parent="Level" unique_id=473771372]
+[node name="BorderBottom" type="StaticBody2D" parent="Env" unique_id=473771372]
 position = Vector2(-141, 2177)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BorderBottom" unique_id=1971986961]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderBottom" unique_id=1971986961]
 position = Vector2(147, -397)
 shape = SubResource("RectangleShape2D_kln2b")
 
-[node name="BorderLeft2" type="StaticBody2D" parent="Level" unique_id=683200005]
+[node name="BorderLeft2" type="StaticBody2D" parent="Env" unique_id=683200005]
 position = Vector2(-2154, 735)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/BorderLeft2" unique_id=1084581592]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderLeft2" unique_id=1084581592]
 position = Vector2(305, -675.50006)
 shape = SubResource("RectangleShape2D_idj7w")
 
-[node name="Ground" type="Sprite2D" parent="Level" unique_id=1043730738]
+[node name="Ground" type="Sprite2D" parent="Env" unique_id=1043730738]
 position = Vector2(-769.68164, -769.68164)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kln2b")
 
-[node name="Ground2" type="Sprite2D" parent="Level" unique_id=2094865775]
+[node name="Ground2" type="Sprite2D" parent="Env" unique_id=2094865775]
 position = Vector2(766, -770.00006)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kln2b")
 
-[node name="Ground3" type="Sprite2D" parent="Level" unique_id=892470023]
+[node name="Ground3" type="Sprite2D" parent="Env" unique_id=892470023]
 position = Vector2(766, 766)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kln2b")
 
-[node name="Ground4" type="Sprite2D" parent="Level" unique_id=1434350950]
+[node name="Ground4" type="Sprite2D" parent="Env" unique_id=1434350950]
 position = Vector2(-770, 766)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_kln2b")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=34435818]
+[node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect")]
+script = ExtResource("3_pbw6q")
+color_rect = NodePath("ColorRect")
+eye_radius_reduce_rate = 0.1
+eye_falloff_reduce_rate = 0.01
 
-[node name="Mask" type="ColorRect" parent="CanvasLayer" unique_id=1485384197]
+[node name="ColorRect" type="ColorRect" parent="MaskCanvasLayer" unique_id=1485384197]
 material = SubResource("ShaderMaterial_rgh2o")
 anchors_preset = 15
 anchor_right = 1.0
