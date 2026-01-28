@@ -18,16 +18,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	reduce_eye_radius(delta)
+	# reduce_eye_radius(delta)
 	pass
 
 # Continually reduces the eye radius
-func reduce_eye_radius(delta: float) -> void:
-	var curr_radius: float = color_rect_mat.get_shader_parameter(eye_radius_str)
-	var curr_falloff: float = color_rect_mat.get_shader_parameter(eye_falloff_str)
-	
-	var new_radius := curr_radius - eye_radius_reduce_rate * delta / 100
-	color_rect_mat.set_shader_parameter(eye_radius_str, new_radius)
-	
-	var new_falloff := curr_falloff + eye_falloff_reduce_rate * delta / 100
-	color_rect_mat.set_shader_parameter(eye_falloff_str, new_falloff)
+#func reduce_eye_radius(delta: float) -> void:
+#	var curr_radius: float = color_rect_mat.get_shader_parameter(eye_radius_str)
+#	var curr_falloff: float = color_rect_mat.get_shader_parameter(eye_falloff_str)
+#	
+#	var new_radius := curr_radius - eye_radius_reduce_rate * delta / 100
+#	color_rect_mat.set_shader_parameter(eye_radius_str, new_radius)
+#	
+#	var new_falloff := curr_falloff + eye_falloff_reduce_rate * delta / 100
+#	color_rect_mat.set_shader_parameter(eye_falloff_str, new_falloff)

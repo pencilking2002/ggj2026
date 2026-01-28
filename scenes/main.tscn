@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/Player.tscn" id="1_rgh2o"]
-[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/dirt.jpg" id="2_kln2b"]
-[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="3_kln2b"]
-[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://Scenes/player.tscn" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/dirt.jpg" id="2_6bp64"]
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
+[ext_resource type="Script" uid="uid://cg5jnedyonhyj" path="res://Scripts/worm.gd" id="5_hptm8"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="6_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -12,15 +14,15 @@ size = Vector2(633.9111, 4413)
 size = Vector2(5060, 561)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgh2o"]
-shader = ExtResource("3_kln2b")
+shader = ExtResource("4_ynf5e")
 shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
 shader_parameter/offset = Vector2(0.14, 0.08)
-shader_parameter/eye_radius = 0.1
-shader_parameter/eye_falloff = 0.01
+shader_parameter/eye_radius = 0.055
+shader_parameter/eye_falloff = 0.065
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
-[node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_rgh2o")]
+[node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
 
 [node name="Env" type="Node2D" parent="." unique_id=1379805591]
 
@@ -55,28 +57,29 @@ shape = SubResource("RectangleShape2D_idj7w")
 [node name="Ground" type="Sprite2D" parent="Env" unique_id=1043730738]
 position = Vector2(-769.68164, -769.68164)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kln2b")
+texture = ExtResource("2_6bp64")
 
 [node name="Ground2" type="Sprite2D" parent="Env" unique_id=2094865775]
 position = Vector2(766, -770.00006)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kln2b")
+texture = ExtResource("2_6bp64")
 
 [node name="Ground3" type="Sprite2D" parent="Env" unique_id=892470023]
 position = Vector2(766, 766)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kln2b")
+texture = ExtResource("2_6bp64")
 
 [node name="Ground4" type="Sprite2D" parent="Env" unique_id=1434350950]
 position = Vector2(-770, 766)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_kln2b")
+texture = ExtResource("2_6bp64")
 
-[node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect")]
-script = ExtResource("3_pbw6q")
+[node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect", "timer")]
+script = ExtResource("3_344ge")
 color_rect = NodePath("ColorRect")
+timer = NodePath("Timer")
 eye_radius_reduce_rate = 0.1
-eye_falloff_reduce_rate = 0.01
+eye_falloff_reduce_rate = 0.1
 
 [node name="ColorRect" type="ColorRect" parent="MaskCanvasLayer" unique_id=1485384197]
 material = SubResource("ShaderMaterial_rgh2o")
@@ -88,3 +91,15 @@ offset_bottom = 246.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.58035105, 0.33670077, 1)
+
+[node name="Timer" type="Timer" parent="MaskCanvasLayer" unique_id=1987160907]
+wait_time = 30.0
+
+[node name="Worm" type="Node2D" parent="." unique_id=934896181 node_paths=PackedStringArray("sprite")]
+position = Vector2(413, 232)
+script = ExtResource("5_hptm8")
+sprite = NodePath("Sprite")
+
+[node name="Sprite" type="Sprite2D" parent="Worm" unique_id=148702007]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_d1ilt")
