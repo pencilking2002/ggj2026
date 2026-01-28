@@ -14,7 +14,7 @@ var color_rect_mat: Material
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	color_rect_mat = color_rect.material
-
+	SoundManager.play_sound_mask()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
