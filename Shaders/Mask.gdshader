@@ -15,8 +15,11 @@ float circle(vec2 position, float radius, float feather)
 void fragment() {
     vec4 col = texture(SCREEN_TEXTURE, SCREEN_UV);
 	
-	float left_eye = circle(UV+offset, eye_radius, eye_falloff);
-	float right_eye = circle(UV-offset, eye_radius, eye_falloff);
+	vec2 left_uv = vec2(UV.x+offset.x, UV.y+offset.y);
+	vec2 right_uv = vec2(UV.x-offset.x, UV.y+offset.y);
+
+	float left_eye = circle(left_uv, eye_radius, eye_falloff);
+	float right_eye = circle(right_uv, eye_radius, eye_falloff);
     vec4 left_eye_color = mix(col, mask_color, left_eye);
 	vec4 right_eye_color = mix(col, mask_color, right_eye);
 	COLOR = left_eye_color + right_eye_color;
