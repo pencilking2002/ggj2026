@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="PackedScene" uid="uid://bsfa1tlsh7fwr" path="res://scenes/Player.tscn" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/Player.tscn" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/env/dirt.jpg" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://Scenes/worm.tscn" id="5_kry3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -79,6 +79,7 @@ color_rect = NodePath("ColorRect")
 timer = NodePath("Timer")
 eye_radius_reduce_rate = 0.1
 eye_falloff_reduce_rate = 0.1
+fade_in_eye_radius_duration = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="MaskCanvasLayer" unique_id=1485384197]
 material = SubResource("ShaderMaterial_rgh2o")
