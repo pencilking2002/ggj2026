@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://Scenes/worm.tscn" id="5_kry3j"]
-[ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://Scripts/spawn_area.gd" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://Scenes/spawn_point_controller.tscn" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -19,9 +19,6 @@ shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
 shader_parameter/offset = Vector2(0.21, 0.08)
 shader_parameter/eye_radius = 0.12
 shader_parameter/eye_falloff = 0.065
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kry3j"]
-radius = 1457.0123
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
@@ -108,9 +105,4 @@ wait_time = 30.0
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("5_kry3j")]
 position = Vector2(-414, 166)
 
-[node name="SpawnPointController" type="Area2D" parent="." unique_id=741681669 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
-script = ExtResource("6_21xkr")
-circle = NodePath("SpawmArea")
-
-[node name="SpawmArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=1746950657]
-shape = SubResource("CircleShape2D_kry3j")
+[node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
