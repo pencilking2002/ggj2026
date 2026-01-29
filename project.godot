@@ -28,7 +28,6 @@ SoundManager="*uid://c6qocawtnf6dr"
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [global_group]
 
