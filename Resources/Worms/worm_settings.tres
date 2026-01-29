@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_sryq3")
+submerged_duration = 4.0
 metadata/_custom_type_script = "uid://c58sgifwcoxqd"

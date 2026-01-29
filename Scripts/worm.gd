@@ -25,16 +25,20 @@ func set_state(input_state: WormStateEnum):
 	
 func _process(delta: float):
 	time_elapsed += delta
+	update_worm_state()
 
-	if worm_state == WormStateEnum.SUBMERGED && Time.get_ticks_msec() > last_dive_time + worm_settings.submerged_duration:
+# Manage the worm's looping behavir of emerging and submerging
+func update_worm_state() -> void:
+	if worm_state == WormStateEnum.SUBMERGED && time_elapsed > last_dive_time + worm_settings.submerged_duration:
 		set_state(WormStateEnum.EMERGING)
-		last_emerge_time = Time.get_ticks_msec()
-	elif worm_state == WormStateEnum.IDLE and Time.get_ticks_msec() > last_emerge_time + worm_settings.idle_duration:
-		set_state(WormStateEnum.DIVING)
-		last_dive_time = Time.get_ticks_msec()
-	elif worm_state == WormStateEnum.DIVING && Time.get_ticks_msec() > last_dive_time + worm_settings.dive_duration:
-		set_state(WormStateEnum.SUBMERGED)
-		last_dive_time = Time.get_ticks_msec()
-	elif worm_state == WormStateEnum.EMERGING && Time.get_ticks_msec() > last_emerge_time + worm_settings.emerge_duration:
+		last_emerge_time = time_elapsed
+	elif worm_state == WormStateEnum.EMERGING && time_elapsed > last_emerge_time + worm_settings.emerge_duration:
 		set_state(WormStateEnum.IDLE)
-		last_emerge_time = Time.get_ticks_msec()
+		last_emerge_time = time_elapsed
+	elif worm_state == WormStateEnum.IDLE and time_elapsed > last_emerge_time + worm_settings.idle_duration:
+		set_state(WormStateEnum.DIVING)
+		last_dive_time = time_elapsed
+	elif worm_state == WormStateEnum.DIVING && time_elapsed > last_dive_time + worm_settings.dive_duration:
+		set_state(WormStateEnum.SUBMERGED)
+		last_dive_time = time_elapsed
+	
