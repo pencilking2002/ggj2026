@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WormSettings" format=3 uid="uid://dph0mie47lxod"]
 
-[ext_resource type="Script" uid="uid://c58sgifwcoxqd" path="res://Scripts/worm_settings.gd" id="1_sryq3"]
+[ext_resource type="Script" uid="uid://c58sgifwcoxqd" path="res://scripts/worm_settings.gd" id="1_sryq3"]
 
 [resource]
 script = ExtResource("1_sryq3")

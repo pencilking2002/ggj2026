@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6qocawtnf6dr"]
 
-[ext_resource type="Script" uid="uid://de313wobstja0" path="res://Scripts/sound_manager.gd" id="1_25ke0"]
+[ext_resource type="Script" uid="uid://de313wobstja0" path="res://scripts/sound_manager.gd" id="1_25ke0"]
 [ext_resource type="AudioStream" uid="uid://djh1fx5qba2u2" path="res://soundeffects/maskbreathing.ogg" id="2_1ohty"]
 
 [node name="SoundManager" type="Control" unique_id=1742456968]

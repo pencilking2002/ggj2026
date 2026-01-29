@@ -7,6 +7,7 @@ class_name Worm
 var last_dive_time: float
 var last_emerge_time: float
 var time_elapsed: float
+var is_in_sight: bool
 
 enum WormStateEnum {
 	IDLE,
@@ -26,6 +27,10 @@ func set_state(input_state: WormStateEnum):
 func _process(delta: float):
 	time_elapsed += delta
 	update_worm_state()
+	
+	if is_in_sight:
+		var old_color = sprite.get_modulate()
+		sprite.modulate()
 
 # Manage the worm's looping behavir of emerging and submerging
 func update_worm_state() -> void:
