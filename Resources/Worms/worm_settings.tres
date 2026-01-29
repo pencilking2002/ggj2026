@@ -4,5 +4,8 @@
 
 [resource]
 script = ExtResource("1_sryq3")
-submerged_duration = 4.0
+idle_duration = 10.0
+submerged_duration = 0.5
+dive_duration = 0.5
+emerge_duration = 0.5
 metadata/_custom_type_script = "uid://c58sgifwcoxqd"
