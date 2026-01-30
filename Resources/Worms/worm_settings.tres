@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_sryq3")
-idle_duration = 10.0
+idle_duration = 7.0
 submerged_duration = 0.5
 dive_duration = 0.5
 emerge_duration = 0.5

@@ -80,6 +80,7 @@ worm_settings = ExtResource("2_x1856")
 sprite = NodePath("Sprite")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=590163756]
+position = Vector2(9, -115)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1929762362]
 position = Vector2(-5, 46)
@@ -88,7 +89,7 @@ shape = SubResource("RectangleShape2D_ttset")
 [node name="Sprite" type="Sprite2D" parent="." unique_id=795742947]
 texture_filter = 1
 material = SubResource("ShaderMaterial_tdamb")
-position = Vector2(0, 1)
+position = Vector2(9, -114)
 scale = Vector2(8, 8)
 texture = ExtResource("3_lley5")
 hframes = 8

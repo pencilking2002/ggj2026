@@ -79,10 +79,28 @@ texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
 
 [node name="AidPickup" parent="Env" unique_id=1498079214 instance=ExtResource("2_tipki")]
-position = Vector2(-268, 275)
+position = Vector2(-301, 475)
+
+[node name="AidPickup3" parent="Env" unique_id=182444256 instance=ExtResource("2_tipki")]
+position = Vector2(1076, -918)
+
+[node name="AidPickup2" parent="Env" unique_id=1957153247 instance=ExtResource("2_tipki")]
+z_index = 1
+position = Vector2(85, -666)
 
 [node name="Waste" type="Sprite2D" parent="Env" unique_id=303267393]
-position = Vector2(540, -448)
+position = Vector2(985, -248)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_85g3d")
+
+[node name="Waste2" type="Sprite2D" parent="Env" unique_id=747836924]
+position = Vector2(-893, -799)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_85g3d")
+flip_h = true
+
+[node name="Waste3" type="Sprite2D" parent="Env" unique_id=2063728153]
+position = Vector2(-793, 931)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_85g3d")
 
@@ -107,16 +125,16 @@ size_flags_vertical = 3
 color = Color(0, 0.58035105, 0.33670077, 1)
 
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("5_kry3j")]
-position = Vector2(-651, 254)
+position = Vector2(-15, 519)
 
 [node name="Worm2" parent="." unique_id=1413576287 instance=ExtResource("5_kry3j")]
-position = Vector2(-127, -333)
+position = Vector2(-265, -773)
 
 [node name="Worm3" parent="." unique_id=963647503 instance=ExtResource("5_kry3j")]
-position = Vector2(-132, 958)
+position = Vector2(103, -418)
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
-position = Vector2(2, -4)
+position = Vector2(7, -9)
 collision_layer = 0
 collision_mask = 0
 

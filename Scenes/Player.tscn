@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bo1nx"]
 radius = 650.0
 
-[node name="Player" type="CharacterBody2D" unique_id=173045213 node_paths=PackedStringArray("left_eye", "right_eye")]
+[node name="Player" type="CharacterBody2D" unique_id=173045213 node_paths=PackedStringArray("left_eye", "right_eye") groups=["player"]]
 script = ExtResource("1_rpqav")
 move_speed = 30.0
 left_eye = NodePath("LeftEyeCollisionReporter")
