@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://scripts/spawn_area.gd" id="1_hs1qn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kry3j"]
-radius = 1214.0066
+radius = 975.0621
 
 [node name="SpawnPointController" type="Area2D" unique_id=498951010 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
 script = ExtResource("1_hs1qn")

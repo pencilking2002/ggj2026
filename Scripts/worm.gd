@@ -2,11 +2,12 @@ class_name Worm extends SpottableItem
 
 @export var animator: AnimationPlayer
 @export var worm_settings:WormSettings
-
+var idle_duration : float
 var last_dive_time: float
 var last_emerge_time: float
 var time_elapsed: float
 var is_spotted: bool
+var player : Player
 
 enum WormStateEnum {
 	IDLE,
@@ -20,6 +21,15 @@ enum WormStateEnum {
 func _ready():
 	init()
 	animator.play("idle")
+	cache_player()
+	idle_duration = worm_settings.idle_duration + randf_range(0, worm_settings.idle_duration_variance)
+	
+func cache_player():
+	var nodes : Array[Node] = get_tree().get_nodes_in_group("player")
+	if nodes.size() > 0:
+		player = nodes[0]
+	else:
+		print("unable to located player")
 	
 func set_state(input_state: WormStateEnum):
 	worm_state = input_state
@@ -34,12 +44,14 @@ func update_worm_state() -> void:
 		set_state(WormStateEnum.EMERGING)
 		last_emerge_time = time_elapsed
 		sprite.show()
+		animator.play("idle")
 		position = get_random_point()
 	elif worm_state == WormStateEnum.EMERGING && time_elapsed > last_emerge_time + worm_settings.emerge_duration:
 		set_state(WormStateEnum.IDLE)
 		last_emerge_time = time_elapsed
 		sprite.show()
-	elif worm_state == WormStateEnum.IDLE and time_elapsed > last_emerge_time + worm_settings.idle_duration:
+		animator.play("idle")
+	elif worm_state == WormStateEnum.IDLE and time_elapsed > last_emerge_time + idle_duration:
 		set_state(WormStateEnum.DIVING)
 		last_dive_time = time_elapsed
 		animator.play("dive")
@@ -62,3 +74,11 @@ func get_random_point() -> Vector2:
 		
 func can_be_collected() -> bool:
 	return worm_state == WormStateEnum.IDLE
+	
+#func _draw():
+#	var start_point : Vector2 = position
+#	var end_point : Vector2 = player.position
+#	var line_color = Color.WHITE
+#	var line_thickness = 3
+#	
+#	draw_line(start_point, end_point, line_color, line_thickness)
