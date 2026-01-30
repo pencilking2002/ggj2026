@@ -6,9 +6,10 @@ var sprite_mat : ShaderMaterial
 static var blink_strength_str : StringName = &"blink_strength"
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func init() -> void:
 	if sprite:
 		sprite_mat = sprite.material
+		print ("Set sprite mat ", name)
 	else:
 		print("Pickup: Sprite is not defined")
 

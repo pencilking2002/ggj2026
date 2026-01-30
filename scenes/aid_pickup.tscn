@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://shaders/highlight.gdshader" id="1_82y0l"]
 [ext_resource type="Texture2D" uid="uid://bi7ynvpd4cljj" path="res://textures/env/aid.png" id="1_snq8u"]
-[ext_resource type="Script" uid="uid://ovjytoih5exn" path="res://scripts/spottable_item.gd" id="1_un8w8"]
+[ext_resource type="Script" uid="uid://cnkkva8hmu1fl" path="res://scripts/aid_pickup.gd" id="1_un8w8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
 size = Vector2(784, 544)

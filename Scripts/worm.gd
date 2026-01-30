@@ -1,18 +1,12 @@
-extends Node2D
-class_name Worm
+class_name Worm extends SpottableItem
 
-@export var sprite: Sprite2D
 @export var animator: AnimationPlayer
 @export var worm_settings:WormSettings
-@export var additive_color: Color
-
-static var additive_color_str: String = "additive_color"
 
 var last_dive_time: float
 var last_emerge_time: float
 var time_elapsed: float
 var is_spotted: bool
-var worm_mat: Material
 
 enum WormStateEnum {
 	IDLE,
@@ -24,18 +18,16 @@ enum WormStateEnum {
 @export var worm_state: WormStateEnum = WormStateEnum.IDLE
 
 func _ready():
+	init()
 	animator.play("idle")
-	worm_mat = sprite.material
 	
 func set_state(input_state: WormStateEnum):
 	worm_state = input_state
 	
 func _process(delta: float):
 	time_elapsed += delta
-	update_worm_state()
+	# update_worm_state()
 	
-	highlight(is_spotted)
-
 # Manage the worm's looping behavir of emerging and submerging
 func update_worm_state() -> void:
 	if worm_state == WormStateEnum.SUBMERGED && time_elapsed > last_dive_time + worm_settings.submerged_duration:
@@ -55,14 +47,7 @@ func update_worm_state() -> void:
 		set_state(WormStateEnum.SUBMERGED)
 		last_dive_time = time_elapsed
 		sprite.hide()
-	
-func highlight(is_highlighted: bool):
-	var color: Color = Color.BLACK
-	if is_highlighted:
-		color = additive_color
-		
-	worm_mat.set_shader_parameter(additive_color_str, color)
-	
+
 # Requests a random position from SpwmPointController
 func get_random_point() -> Vector2:
 	var nodes: Array[Node] = get_tree().get_nodes_in_group("spawn_area")

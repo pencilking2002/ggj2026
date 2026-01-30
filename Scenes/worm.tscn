@@ -5,9 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://c44ujxvx2qhom" path="res://textures/test_worm_ss.png" id="3_lley5"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://shaders/highlight.gdshader" id="3_ttset"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttset"]
+shader = ExtResource("3_ttset")
+shader_parameter/highlight_color = Color(0.43254668, 0.31276858, 0.10087853, 1)
+shader_parameter/blink_strength = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttset"]
+size = Vector2(86, 138)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tdamb"]
 shader = ExtResource("3_ttset")
-shader_parameter/additive_color = Vector4(0, 0, 0, 0)
+shader_parameter/highlight_color = Color(0.2173425, 0.14772567, 0.030302892, 1)
+shader_parameter/blink_strength = 0.0
 
 [sub_resource type="Animation" id="Animation_lley5"]
 length = 0.001
@@ -63,12 +72,18 @@ _data = {
 &"idle": SubResource("Animation_ttset")
 }
 
-[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("sprite", "animator")]
+[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("animator", "sprite")]
+material = SubResource("ShaderMaterial_ttset")
 script = ExtResource("1_n80vc")
-sprite = NodePath("Sprite")
 animator = NodePath("AnimationPlayer")
 worm_settings = ExtResource("2_x1856")
-additive_color = Color(0.27765325, 0.18992025, 0.13843769, 1)
+sprite = NodePath("Sprite")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=590163756]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1929762362]
+position = Vector2(-5, 46)
+shape = SubResource("RectangleShape2D_ttset")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=795742947]
 texture_filter = 1
