@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cg5jnedyonhyj" path="res://scripts/worm.gd" id="1_n80vc"]
 [ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://resources/worms/worm_settings.tres" id="2_x1856"]
-[ext_resource type="Texture2D" uid="uid://c44ujxvx2qhom" path="res://textures/test_worm_ss.png" id="3_lley5"]
+[ext_resource type="Texture2D" uid="uid://c44ujxvx2qhom" path="res://textures/tests/test_worm_ss.png" id="3_lley5"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://shaders/highlight.gdshader" id="3_ttset"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttset"]

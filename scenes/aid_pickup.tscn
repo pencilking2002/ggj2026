@@ -10,7 +10,7 @@ shader_parameter/highlight_color = Color(0.2173425, 0.14772567, 0.030302892, 1)
 shader_parameter/blink_strength = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
-size = Vector2(496, 344)
+size = Vector2(3240.0002, 2320.0002)
 
 [node name="Sprite2D" type="Sprite2D" unique_id=65565605 node_paths=PackedStringArray("sprite")]
 material = SubResource("ShaderMaterial_un8w8")

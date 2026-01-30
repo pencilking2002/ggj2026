@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0e8utg6ar36v"
-path="res://.godot/imported/MrWiggly.png-50ba1714218dd092f3b528fd311b9ce1.ctex"
+uid="uid://be70q7orm6rgf"
+path="res://.godot/imported/circle.png-9fb3e651f7cd9d4b877724770759b26f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/MrWiggly.png"
-dest_files=["res://.godot/imported/MrWiggly.png-50ba1714218dd092f3b528fd311b9ce1.ctex"]
+source_file="res://textures/ui/circle.png"
+dest_files=["res://.godot/imported/circle.png-9fb3e651f7cd9d4b877724770759b26f.ctex"]
 
 [params]
 

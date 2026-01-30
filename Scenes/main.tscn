@@ -8,6 +8,9 @@
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
+[ext_resource type="Texture2D" uid="uid://gi73rrx7jcy8" path="res://textures/ui/meter.png" id="7_choun"]
+[ext_resource type="Texture2D" uid="uid://be70q7orm6rgf" path="res://textures/ui/circle.png" id="8_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://textures/ui/needle.png" id="8_ya4ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -21,6 +24,19 @@ shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
 shader_parameter/offset = Vector2(0.21, 0.08)
 shader_parameter/eye_radius = 0.12
 shader_parameter/eye_falloff = 0.065
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eb6dy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trceg"]
+texture = ExtResource("7_choun")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_trceg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkv2x"]
+texture = ExtResource("8_eb6dy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8y0u"]
+texture = ExtResource("8_ya4ey")
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
@@ -131,13 +147,73 @@ material = SubResource("ShaderMaterial_rgh2o")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -133.0
-offset_bottom = 255.0
+offset_top = -172.0
+offset_bottom = 216.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0.58035105, 0.33670077, 1)
+
+[node name="UI" type="Control" parent="MaskCanvasLayer" unique_id=21558041]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 437.0
+offset_top = 425.0
+offset_right = 527.0
+offset_bottom = 465.0
+
+[node name="Meter" type="Panel" parent="MaskCanvasLayer/UI" unique_id=556639486]
+material = SubResource("CanvasItemMaterial_eb6dy")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -15.0
+offset_right = 41.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_trceg")
+
+[node name="Needle" type="Panel" parent="MaskCanvasLayer/UI" unique_id=2079772022]
+modulate = Color(0.13072005, 0.26380324, 0.2638458, 1)
+material = SubResource("CanvasItemMaterial_trceg")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51111114
+anchor_top = 0.975
+anchor_right = 0.51111114
+anchor_bottom = 0.975
+offset_left = -9.000004
+offset_top = 2.0
+offset_right = 6.0007973
+offset_bottom = 17.19553
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(7.621704, 6.9499817)
+theme_override_styles/panel = SubResource("StyleBoxTexture_jkv2x")
+
+[node name="circle" type="Panel" parent="MaskCanvasLayer/UI" unique_id=1628898433]
+modulate = Color(0.22352941, 0.41568628, 0.41568628, 1)
+material = SubResource("CanvasItemMaterial_eb6dy")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51111114
+anchor_top = 0.975
+anchor_right = 0.51111114
+anchor_bottom = 0.975
+offset_left = -6.0
+offset_top = -21.0
+offset_right = 3.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(5, 30)
+theme_override_styles/panel = SubResource("StyleBoxTexture_a8y0u")
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
 position = Vector2(7, -9)
@@ -145,4 +221,4 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
-position = Vector2(505, 288)
+position = Vector2(465, 337)

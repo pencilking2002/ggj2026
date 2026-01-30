@@ -18,7 +18,7 @@ right_eye = NodePath("RightEyeCollisionReporter")
 shape = SubResource("CircleShape2D_bo1nx")
 
 [node name="LeftEyeCollisionReporter" parent="." unique_id=2011501470 instance=ExtResource("2_g2els")]
-position = Vector2(-226, -29)
+position = Vector2(-186, -118)
 
 [node name="RightEyeCollisionReporter" parent="." unique_id=997453772 instance=ExtResource("2_g2els")]
-position = Vector2(176, -31)
+position = Vector2(216, -120)

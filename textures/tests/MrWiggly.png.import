@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c44ujxvx2qhom"
-path="res://.godot/imported/test_worm_ss.png-0d3568f4fd8d174c04071aa92b5341ab.ctex"
+uid="uid://d0e8utg6ar36v"
+path="res://.godot/imported/MrWiggly.png-02d2c341d898205ef834bfd4f289e1f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/test_worm_ss.png"
-dest_files=["res://.godot/imported/test_worm_ss.png-0d3568f4fd8d174c04071aa92b5341ab.ctex"]
+source_file="res://textures/tests/MrWiggly.png"
+dest_files=["res://.godot/imported/MrWiggly.png-02d2c341d898205ef834bfd4f289e1f1.ctex"]
 
 [params]
 
