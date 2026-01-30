@@ -26,7 +26,7 @@ func set_state(input_state: WormStateEnum):
 	
 func _process(delta: float):
 	time_elapsed += delta
-	# update_worm_state()
+	update_worm_state()
 	
 # Manage the worm's looping behavir of emerging and submerging
 func update_worm_state() -> void:
