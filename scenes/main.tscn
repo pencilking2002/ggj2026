@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/Player.tscn" id="1_21xkr"]
-[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/env/dirt.jpg" id="2_6bp64"]
+[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/player.tscn" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://textures/env/dirt.jpg" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://scenes/aid_pickup.tscn" id="2_tipki"]
-[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
-[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://Textures/env/waste.png" id="4_85g3d"]
-[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://textures/env/waste.png" id="4_85g3d"]
+[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://Scenes/spawn_point_controller.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -24,83 +24,86 @@ shader_parameter/eye_falloff = 0.065
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
-[node name="Env" type="Node2D" parent="." unique_id=1379805591]
+[node name="Ground" type="Node2D" parent="." unique_id=162500319]
 
-[node name="BorderRight" type="StaticBody2D" parent="Env" unique_id=348396444]
+[node name="BorderRight" type="StaticBody2D" parent="Ground" unique_id=348396444]
 position = Vector2(2270, 751)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderRight" unique_id=269646424]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BorderRight" unique_id=269646424]
 position = Vector2(-421, -676)
 shape = SubResource("RectangleShape2D_idj7w")
 
-[node name="BorderTop" type="StaticBody2D" parent="Env" unique_id=47767415]
+[node name="BorderTop" type="StaticBody2D" parent="Ground" unique_id=47767415]
 position = Vector2(-141, -2162)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderTop" unique_id=1670731865]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BorderTop" unique_id=1670731865]
 position = Vector2(147, 346)
 shape = SubResource("RectangleShape2D_kln2b")
 
-[node name="BorderBottom" type="StaticBody2D" parent="Env" unique_id=473771372]
+[node name="BorderBottom" type="StaticBody2D" parent="Ground" unique_id=473771372]
 position = Vector2(-141, 2177)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderBottom" unique_id=1971986961]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BorderBottom" unique_id=1971986961]
 position = Vector2(147, -397)
 shape = SubResource("RectangleShape2D_kln2b")
 
-[node name="BorderLeft2" type="StaticBody2D" parent="Env" unique_id=683200005]
+[node name="BorderLeft2" type="StaticBody2D" parent="Ground" unique_id=683200005]
 position = Vector2(-2154, 735)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/BorderLeft2" unique_id=1084581592]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/BorderLeft2" unique_id=1084581592]
 position = Vector2(305, -675.50006)
 shape = SubResource("RectangleShape2D_idj7w")
 
-[node name="Ground" type="Sprite2D" parent="Env" unique_id=1043730738]
+[node name="Ground" type="Sprite2D" parent="Ground" unique_id=1043730738]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3520.909, -3091.5757)
 
-[node name="Ground2" type="Sprite2D" parent="Env" unique_id=2094865775]
+[node name="Ground2" type="Sprite2D" parent="Ground" unique_id=2094865775]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-1473.3334, -3092)
 
-[node name="Ground3" type="Sprite2D" parent="Env" unique_id=892470023]
+[node name="Ground3" type="Sprite2D" parent="Ground" unique_id=892470023]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-1473.3334, -1044.0001)
 
-[node name="Ground4" type="Sprite2D" parent="Env" unique_id=1434350950]
+[node name="Ground4" type="Sprite2D" parent="Ground" unique_id=1434350950]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
 
-[node name="AidPickup" parent="Env" unique_id=1498079214 instance=ExtResource("2_tipki")]
+[node name="Objects" type="Node2D" parent="." unique_id=1379805591]
+y_sort_enabled = true
+
+[node name="AidPickup" parent="Objects" unique_id=1498079214 instance=ExtResource("2_tipki")]
 position = Vector2(-301, 475)
 
-[node name="AidPickup3" parent="Env" unique_id=182444256 instance=ExtResource("2_tipki")]
+[node name="AidPickup3" parent="Objects" unique_id=182444256 instance=ExtResource("2_tipki")]
 position = Vector2(1076, -918)
 
-[node name="AidPickup2" parent="Env" unique_id=1957153247 instance=ExtResource("2_tipki")]
+[node name="AidPickup2" parent="Objects" unique_id=1957153247 instance=ExtResource("2_tipki")]
 z_index = 1
 position = Vector2(85, -666)
 
-[node name="Waste" type="Sprite2D" parent="Env" unique_id=303267393]
+[node name="Waste" type="Sprite2D" parent="Objects" unique_id=303267393]
 position = Vector2(985, -248)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_85g3d")
 
-[node name="Waste2" type="Sprite2D" parent="Env" unique_id=747836924]
+[node name="Waste2" type="Sprite2D" parent="Objects" unique_id=747836924]
 position = Vector2(-893, -799)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_85g3d")
 flip_h = true
 
-[node name="Waste3" type="Sprite2D" parent="Env" unique_id=2063728153]
-position = Vector2(-793, 931)
+[node name="Waste3" type="Sprite2D" parent="Objects" unique_id=2063728153]
+position = Vector2(-841, -644)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_85g3d")
 
