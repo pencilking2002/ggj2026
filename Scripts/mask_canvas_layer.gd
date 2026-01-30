@@ -1,6 +1,7 @@
 extends CanvasLayer
 class_name MaskCanvasLayer
 
+@export var is_mask_enabled : bool = true
 @export var color_rect: ColorRect
 @export var timer: Timer
 @export var eye_radius_reduce_rate := 8.0
@@ -14,14 +15,18 @@ static var eye_falloff_str: String = "eye_falloff"
 var color_rect_mat: Material
 
 func _ready() -> void:
-	# Cache the color rect's material
-	color_rect_mat = color_rect.material
-	
-	# Animate the eye radius
-	fade_in_eye_radius(fade_in_eye_radius_duration)
-	
-	# Animate the volume of the gas mask breathing
-	SoundManager.play_sound_mask_with_ramp_up(breath_audio_fade_in_duration)
+
+	if not is_mask_enabled:
+		visible = false
+	else:
+		# Cache the color rect's material
+		color_rect_mat = color_rect.material
+		
+		# Animate the eye radius
+		fade_in_eye_radius(fade_in_eye_radius_duration)
+		
+		# Animate the volume of the gas mask breathing
+		SoundManager.play_sound_mask_with_ramp_up(breath_audio_fade_in_duration)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -109,6 +109,12 @@ color = Color(0, 0.58035105, 0.33670077, 1)
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("5_kry3j")]
 position = Vector2(-651, 254)
 
+[node name="Worm2" parent="." unique_id=1413576287 instance=ExtResource("5_kry3j")]
+position = Vector2(-127, -333)
+
+[node name="Worm3" parent="." unique_id=963647503 instance=ExtResource("5_kry3j")]
+position = Vector2(-132, 958)
+
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
 position = Vector2(2, -4)
 collision_layer = 0
