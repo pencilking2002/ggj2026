@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/player.tscn" id="1_21xkr"]
-[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://textures/env/dirt.jpg" id="2_6bp64"]
+[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/Player.tscn" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/env/dirt.jpg" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://scenes/aid_pickup.tscn" id="2_tipki"]
-[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://scripts/mask_canvas_layer.gd" id="3_344ge"]
-[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://textures/env/waste.png" id="4_85g3d"]
-[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://Textures/env/waste.png" id="4_85g3d"]
+[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://Scenes/spawn_point_controller.tscn" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)

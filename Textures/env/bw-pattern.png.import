@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cly1y6575uph0"
-path="res://.godot/imported/bw-pattern.png-fc7ff4eaead4be64a534df03e4ce147e.ctex"
+path="res://.godot/imported/bw-pattern.png-002ae2a4bc5de7e11119bd1d0ffad73f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/env/bw-pattern.png"
-dest_files=["res://.godot/imported/bw-pattern.png-fc7ff4eaead4be64a534df03e4ce147e.ctex"]
+source_file="res://Textures/env/bw-pattern.png"
+dest_files=["res://.godot/imported/bw-pattern.png-002ae2a4bc5de7e11119bd1d0ffad73f.ctex"]
 
 [params]
 
