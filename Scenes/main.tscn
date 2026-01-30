@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://textures/env/dirt.jpg" id="2_6bp64"]
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Texture2D" uid="uid://bi7ynvpd4cljj" path="res://textures/env/aid.png" id="3_tipki"]
+[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://textures/env/waste.png" id="4_85g3d"]
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
@@ -13,6 +15,9 @@ size = Vector2(633.9111, 4413)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 size = Vector2(5060, 561)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(784, 544)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rgh2o"]
 shader = ExtResource("4_ynf5e")
 shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
@@ -21,8 +26,6 @@ shader_parameter/eye_radius = 0.12
 shader_parameter/eye_falloff = 0.065
 
 [node name="Root" type="Node2D" unique_id=1222739125]
-
-[node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
 
 [node name="Env" type="Node2D" parent="." unique_id=1379805591]
 
@@ -78,10 +81,24 @@ scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
 
-[node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect", "timer")]
+[node name="AidPickup" type="Sprite2D" parent="Env" unique_id=746091521]
+position = Vector2(-268, 275)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_tipki")
+
+[node name="Area2D" type="Area2D" parent="Env/AidPickup" unique_id=735733944]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/AidPickup/Area2D" unique_id=624578588]
+shape = SubResource("RectangleShape2D_choun")
+
+[node name="Waste" type="Sprite2D" parent="Env" unique_id=303267393]
+position = Vector2(540, -448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_85g3d")
+
+[node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect")]
 script = ExtResource("3_344ge")
 color_rect = NodePath("ColorRect")
-timer = NodePath("Timer")
 eye_radius_reduce_rate = 0.1
 eye_falloff_reduce_rate = 0.1
 fade_in_eye_radius_duration = 2.0
@@ -99,10 +116,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0.58035105, 0.33670077, 1)
 
-[node name="Timer" type="Timer" parent="MaskCanvasLayer" unique_id=1987160907]
-wait_time = 30.0
-
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("5_kry3j")]
 position = Vector2(-414, 166)
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
+position = Vector2(2, -4)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
+position = Vector2(505, 288)
