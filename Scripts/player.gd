@@ -25,15 +25,8 @@ func _physics_process(delta: float) -> void:
 	velocity = lerp(velocity, target_velocity, delta * move_lerp_speed)
 	move_and_slide()
 
-func item_spotted(item : Node2D) -> void:
-	# print("Player recieved: item_spotted: " + item.name)
-	if item.has_method(&"highlight"):
-		item.highlight(true)
-	else:
-		print("item does not have highlight method: " + item.name)
+func item_spotted(item : SpottableItem) -> void:
+	item.highlight(true)
 
-func item_exited(item : Node2D) -> void:
-	if item.has_method(&"highlight"):
-		item.highlight(false)
-	else:
-		print("item does not have highlight method: " + item.name)
+func item_exited(item : SpottableItem) -> void:
+	item.highlight(false)
