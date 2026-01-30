@@ -4,25 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://bi7ynvpd4cljj" path="res://textures/env/aid.png" id="1_snq8u"]
 [ext_resource type="Script" uid="uid://cnkkva8hmu1fl" path="res://scripts/aid_pickup.gd" id="1_un8w8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
-size = Vector2(496, 344)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_un8w8"]
 shader = ExtResource("1_82y0l")
 shader_parameter/highlight_color = Color(0.2173425, 0.14772567, 0.030302892, 1)
 shader_parameter/blink_strength = 0.0
 
-[node name="AidPickupHello" type="Node2D" unique_id=182444256 node_paths=PackedStringArray("sprite")]
-scale = Vector2(0.25, 0.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(496, 344)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=65565605 node_paths=PackedStringArray("sprite")]
+material = SubResource("ShaderMaterial_un8w8")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_snq8u")
 script = ExtResource("1_un8w8")
-sprite = NodePath("Sprite2D")
+sprite = NodePath(".")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=628137551]
+scale = Vector2(0.24999999, 0.24999999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=364732143]
 shape = SubResource("RectangleShape2D_choun")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=65565605]
-material = SubResource("ShaderMaterial_un8w8")
-scale = Vector2(0.57812494, 0.57812494)
-texture = ExtResource("1_snq8u")

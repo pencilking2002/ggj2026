@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cjdtqfch10g0r"]
+
+[ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://shaders/highlight.gdshader" id="1_42qok"]
+[ext_resource type="Script" uid="uid://divdy3afmw8o8" path="res://scripts/radiated_barrel.gd" id="1_ip2aw"]
+[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://textures/env/waste.png" id="2_42qok"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kh4ok"]
+shader = ExtResource("1_42qok")
+shader_parameter/highlight_color = Color(0.2173425, 0.14772567, 0.030302892, 1)
+shader_parameter/blink_strength = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(232, 138)
+
+[node name="RadiatedBarrel" type="Sprite2D" unique_id=1794315449 node_paths=PackedStringArray("sprite")]
+material = SubResource("ShaderMaterial_kh4ok")
+scale = Vector2(0.2955206, 0.2955206)
+texture = ExtResource("2_42qok")
+script = ExtResource("1_ip2aw")
+sprite = NodePath(".")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=106672043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1135819491]
+rotation = -0.0715585
+shape = SubResource("RectangleShape2D_tipki")

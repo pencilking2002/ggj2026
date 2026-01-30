@@ -14,8 +14,11 @@ func init() -> void:
 		print("Pickup: Sprite is not defined")
 
 func highlight(is_highlighted : bool):
-	var value : float = 1.0 if is_highlighted else 0.0
-	sprite_mat.set_shader_parameter(blink_strength_str, value)
+	if sprite_mat:
+		var value : float = 1.0 if is_highlighted else 0.0
+		sprite_mat.set_shader_parameter(blink_strength_str, value)
+	else:
+		print(name, "'s sprite mat isn't set")
 	
 func can_be_collected() -> bool:
 	return true

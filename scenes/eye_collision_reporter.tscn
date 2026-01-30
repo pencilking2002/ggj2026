@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cdt7wmy8122cp" path="res://scripts/eye_collision_reporter.gd" id="1_7g6qj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_15ttc"]
-radius = 11.7046995
+radius = 42.047592
 
 [node name="EyeCollisionReporterArea2D" type="Area2D" unique_id=2011501470]
 script = ExtResource("1_7g6qj")

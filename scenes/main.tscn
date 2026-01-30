@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/player.tscn" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://textures/env/dirt.jpg" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://scenes/aid_pickup.tscn" id="2_tipki"]
+[ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://scenes/radiated_barrel.tscn" id="3_85g3d"]
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://scripts/mask_canvas_layer.gd" id="3_344ge"]
-[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://textures/env/waste.png" id="4_85g3d"]
 [ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
@@ -85,27 +85,39 @@ y_sort_enabled = true
 position = Vector2(-301, 475)
 
 [node name="AidPickup3" parent="Objects" unique_id=182444256 instance=ExtResource("2_tipki")]
-position = Vector2(1076, -918)
+position = Vector2(-601.9999, -770)
 
 [node name="AidPickup2" parent="Objects" unique_id=1957153247 instance=ExtResource("2_tipki")]
 z_index = 1
 position = Vector2(85, -666)
-
-[node name="Waste" type="Sprite2D" parent="Objects" unique_id=303267393]
-position = Vector2(985, -248)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_85g3d")
-
-[node name="Waste2" type="Sprite2D" parent="Objects" unique_id=747836924]
-position = Vector2(-893, -799)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_85g3d")
 flip_h = true
 
-[node name="Waste3" type="Sprite2D" parent="Objects" unique_id=2063728153]
-position = Vector2(-841, -644)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_85g3d")
+[node name="RadiatedBarrel" parent="Objects" unique_id=1725150807 instance=ExtResource("3_85g3d")]
+position = Vector2(954, -413)
+
+[node name="RadiatedBarrel2" parent="Objects" unique_id=633137558 instance=ExtResource("3_85g3d")]
+position = Vector2(-858, -322)
+flip_h = true
+
+[node name="RadiatedBarrel3" parent="Objects" unique_id=1794315449 instance=ExtResource("3_85g3d")]
+position = Vector2(-779, -406.00003)
+rotation = -0.14164437
+flip_h = true
+
+[node name="RadiatedBarrel4" parent="Objects" unique_id=1354346747 instance=ExtResource("3_85g3d")]
+position = Vector2(-553, 278.99997)
+rotation = 0.06219206
+
+[node name="Worms" type="Node2D" parent="." unique_id=2095044481]
+
+[node name="Worm" parent="Worms" unique_id=952066793 instance=ExtResource("5_kry3j")]
+position = Vector2(-15, 519)
+
+[node name="Worm2" parent="Worms" unique_id=1413576287 instance=ExtResource("5_kry3j")]
+position = Vector2(-265, -773)
+
+[node name="Worm3" parent="Worms" unique_id=963647503 instance=ExtResource("5_kry3j")]
+position = Vector2(103, -418)
 
 [node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect")]
 script = ExtResource("3_344ge")
@@ -126,15 +138,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0.58035105, 0.33670077, 1)
-
-[node name="Worm" parent="." unique_id=952066793 instance=ExtResource("5_kry3j")]
-position = Vector2(-15, 519)
-
-[node name="Worm2" parent="." unique_id=1413576287 instance=ExtResource("5_kry3j")]
-position = Vector2(-265, -773)
-
-[node name="Worm3" parent="." unique_id=963647503 instance=ExtResource("5_kry3j")]
-position = Vector2(103, -418)
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
 position = Vector2(7, -9)
