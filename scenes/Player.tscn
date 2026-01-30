@@ -6,9 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bo1nx"]
 radius = 650.0
 
-[node name="Player" type="CharacterBody2D" unique_id=173045213]
+[node name="Player" type="CharacterBody2D" unique_id=173045213 node_paths=PackedStringArray("left_eye", "right_eye")]
 script = ExtResource("1_rpqav")
 move_speed = 30.0
+left_eye = NodePath("LeftEyeCollisionReporter")
+right_eye = NodePath("RightEyeCollisionReporter")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1923454865]
 
@@ -18,5 +20,5 @@ shape = SubResource("CircleShape2D_bo1nx")
 [node name="LeftEyeCollisionReporter" parent="." unique_id=2011501470 instance=ExtResource("2_g2els")]
 position = Vector2(-226, -29)
 
-[node name="LeftEyeCollisionReporter2" parent="." unique_id=997453772 instance=ExtResource("2_g2els")]
+[node name="RightEyeCollisionReporter" parent="." unique_id=997453772 instance=ExtResource("2_g2els")]
 position = Vector2(176, -31)

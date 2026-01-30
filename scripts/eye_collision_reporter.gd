@@ -1,15 +1,18 @@
 extends Area2D
+class_name EyeCollisionReporter
 
-# Called when the node enters the scene tree for the first time.
+signal on_item_spotted
+signal on_item_exited
+
 func _ready() -> void:
 	area_entered.connect(on_area_entered)
-	# body_entered.connect(on_body_entered)
-
-
-func on_area_entered(other: Area2D):
-	print("area entered: ", other.name)
+	area_exited.connect(on_area_exited)
 	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func on_area_entered(other: Area2D) -> void:
+	# print("area entered: ", other.get_parent().name)
+	var item : Node2D = other.get_parent()
+	on_item_spotted.emit(item)
+
+func on_area_exited(other: Area2D) -> void:
+	var item : Node2D = other.get_parent()
+	on_item_exited.emit(item)
