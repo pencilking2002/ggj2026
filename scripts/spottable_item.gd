@@ -17,3 +17,8 @@ func highlight(is_highlighted : bool):
 	var value : float = 1.0 if is_highlighted else 0.0
 	sprite_mat.set_shader_parameter(blink_strength_str, value)
 	
+func can_be_collected() -> bool:
+	return true
+	
+func collect():
+	queue_free()

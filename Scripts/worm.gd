@@ -60,3 +60,5 @@ func get_random_point() -> Vector2:
 		print("Spawn area not found")
 		return Vector2.ZERO
 		
+func can_be_collected() -> bool:
+	return worm_state == WormStateEnum.IDLE
