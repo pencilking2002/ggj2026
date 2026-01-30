@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cly1y6575uph0"
-path="res://.godot/imported/bw-pattern.png-002ae2a4bc5de7e11119bd1d0ffad73f.ctex"
+uid="uid://bi7ynvpd4cljj"
+path="res://.godot/imported/aid.png-fa7cbf45e9baeb6c39cc4e474a2b7ad3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/env/bw-pattern.png"
-dest_files=["res://.godot/imported/bw-pattern.png-002ae2a4bc5de7e11119bd1d0ffad73f.ctex"]
+source_file="res://Textures/env/aid.png"
+dest_files=["res://.godot/imported/aid.png-fa7cbf45e9baeb6c39cc4e474a2b7ad3.ctex"]
 
 [params]
 

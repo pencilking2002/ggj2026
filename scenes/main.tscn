@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
-[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/player.tscn" id="1_21xkr"]
-[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://textures/env/dirt.jpg" id="2_6bp64"]
-[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://scripts/mask_canvas_layer.gd" id="3_344ge"]
-[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://shaders/mask.gdshader" id="4_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://scenes/Player.tscn" id="1_21xkr"]
+[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://Textures/env/dirt.jpg" id="2_6bp64"]
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://Scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Texture2D" uid="uid://bi7ynvpd4cljj" path="res://Textures/env/aid.png" id="3_tipki"]
+[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://Textures/env/waste.png" id="4_85g3d"]
+[ext_resource type="Shader" uid="uid://tvlor1ke0in0" path="res://Shaders/Mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://scenes/worm.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://scenes/spawn_point_controller.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://Scenes/spawn_point_controller.tscn" id="6_21xkr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -77,6 +79,16 @@ position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
+
+[node name="Aid" type="Sprite2D" parent="Env" unique_id=746091521]
+position = Vector2(-452, -452)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_tipki")
+
+[node name="Waste" type="Sprite2D" parent="Env" unique_id=303267393]
+position = Vector2(540, -448)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_85g3d")
 
 [node name="MaskCanvasLayer" type="CanvasLayer" parent="." unique_id=34435818 node_paths=PackedStringArray("color_rect", "timer")]
 script = ExtResource("3_344ge")
