@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwfhn401rwput"]
 
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://_scenes/Player.tscn" id="1_21xkr"]
-[ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://_textures/env/dirt.jpg" id="2_6bp64"]
+[ext_resource type="Texture2D" uid="uid://bft834wt12byd" path="res://_textures/env/dirt.png" id="1_lfnwg"]
 [ext_resource type="Texture2D" uid="uid://cw5aaso40p04" path="res://_textures/env/Grass01.png" id="2_6glfe"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://_scenes/aid_pickup.tscn" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://dpeun661nn62m" path="res://_textures/env/Grass02.png" id="3_81q0l"]
@@ -81,25 +81,25 @@ shape = SubResource("RectangleShape2D_idj7w")
 [node name="Ground" type="Sprite2D" parent="Ground" unique_id=1043730738]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
-texture = ExtResource("2_6bp64")
+texture = ExtResource("1_lfnwg")
 offset = Vector2(-3520.909, -3091.5757)
 
 [node name="Ground2" type="Sprite2D" parent="Ground" unique_id=2094865775]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
-texture = ExtResource("2_6bp64")
+texture = ExtResource("1_lfnwg")
 offset = Vector2(-1473.3334, -3092)
 
 [node name="Ground3" type="Sprite2D" parent="Ground" unique_id=892470023]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
-texture = ExtResource("2_6bp64")
+texture = ExtResource("1_lfnwg")
 offset = Vector2(-1473.3334, -1044.0001)
 
 [node name="Ground4" type="Sprite2D" parent="Ground" unique_id=1434350950]
 position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
-texture = ExtResource("2_6bp64")
+texture = ExtResource("1_lfnwg")
 offset = Vector2(-3521.3335, -1044.0001)
 
 [node name="Grass01" type="Sprite2D" parent="Ground" unique_id=2041342421]
