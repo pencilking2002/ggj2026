@@ -8,6 +8,7 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_dsi36")
+audio_fade_in_duration = 1.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1650561764]
 layout_mode = 0

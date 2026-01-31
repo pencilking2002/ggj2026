@@ -15,3 +15,43 @@ func play_sound_geiger_single():
 
 func stop_sound_geiger_single():
 	$GeigerSingle.stop()
+
+func play_sound_geiger_fast():
+	$GeigerFast.play()
+
+func stop_sound_geiger_fast():
+	$GeigerFast.stop()
+	
+func play_sound_geiger_medium():
+	$GeigerMedium.play()
+
+func stop_sound_geiger_medium():
+	$GeigerMedium.stop()
+
+func play_sound_geiger_slow():
+	$GeigerSlow.play()
+
+func stop_sound_geiger_slow():
+	$GeigerSlow.stop()
+
+
+#functions for music
+func play_menu_music(volume_ramp_up_duration:float):
+	var tween: Tween = create_tween()
+	tween.tween_property($MenuMusic, "volume_db", linear_to_db(0.5), volume_ramp_up_duration).from(linear_to_db(0.001))
+	$MenuMusic.play()
+
+func stop_menu_music():
+	$MenuMusic.stop()
+
+func play_level_music():
+	$LevelMusic.play()
+
+func stop_level_music():
+	$LevelMusic.stop()
+
+func play_gameover_music():
+	$GameOverMusic.play()
+
+func stop_gameover_music():
+	$GameOverMusic.stop()

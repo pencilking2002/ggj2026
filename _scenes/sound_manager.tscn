@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://c6qocawtnf6dr"]
 
 [ext_resource type="Script" uid="uid://de313wobstja0" path="res://_scripts/sound_manager.gd" id="1_25ke0"]
+[ext_resource type="AudioStream" uid="uid://ca3euuoumrucv" path="res://_soundeffects/_music/WormTrance_gameover.ogg" id="2_1fs2d"]
 [ext_resource type="AudioStream" uid="uid://djh1fx5qba2u2" path="res://_soundeffects/maskbreathing.ogg" id="2_1ohty"]
+[ext_resource type="AudioStream" uid="uid://brhwqq0gc63pc" path="res://_soundeffects/geiger_fast.ogg" id="2_5ag05"]
 [ext_resource type="AudioStream" uid="uid://cxyeet0wnh0yr" path="res://_soundeffects/geiger_single.ogg" id="3_1ohty"]
+[ext_resource type="AudioStream" uid="uid://cv0q0nl7miimq" path="res://_soundeffects/_music/WormTrance_level.ogg" id="3_70vwh"]
+[ext_resource type="AudioStream" uid="uid://bp7xhj46101ud" path="res://_soundeffects/geiger_medium.ogg" id="3_vt5vc"]
+[ext_resource type="AudioStream" uid="uid://djl0b7guu26s8" path="res://_soundeffects/geiger_slow.ogg" id="4_7wto1"]
+[ext_resource type="AudioStream" uid="uid://ccypsymwvht2h" path="res://_soundeffects/_music/WormTrance_menu.ogg" id="4_msy1a"]
 
-
-[node name="SoundManager" type="Control"]
+[node name="SoundManager" type="Control" unique_id=181729252]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,8 +19,30 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25ke0")
 
-[node name="SoundMask" type="AudioStreamPlayer" parent="."]
+[node name="GeigerFast" type="AudioStreamPlayer" parent="." unique_id=1938893904]
+stream = ExtResource("2_5ag05")
+
+[node name="GeigerMedium" type="AudioStreamPlayer" parent="." unique_id=1091303393]
+stream = ExtResource("3_vt5vc")
+
+[node name="GeigerSlow" type="AudioStreamPlayer" parent="." unique_id=1230382945]
+stream = ExtResource("4_7wto1")
+
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="." unique_id=392805173]
+stream = ExtResource("2_1fs2d")
+volume_db = -6.0
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="." unique_id=278927469]
+stream = ExtResource("3_70vwh")
+volume_db = -6.0
+parameters/looping = true
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=695025307]
+stream = ExtResource("4_msy1a")
+parameters/looping = true
+
+[node name="SoundMask" type="AudioStreamPlayer" parent="." unique_id=1348986890]
 stream = ExtResource("2_1ohty")
 
-[node name="GeigerSingle" type="AudioStreamPlayer" parent="."]
+[node name="GeigerSingle" type="AudioStreamPlayer" parent="." unique_id=319453932]
 stream = ExtResource("3_1ohty")
