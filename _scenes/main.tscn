@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://_scenes/Player.tscn" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://_textures/env/dirt.jpg" id="2_6bp64"]
+[ext_resource type="Texture2D" uid="uid://ciqvimjnvrcgi" path="res://_textures/env/Grass_Tuft_A.png" id="2_44f6i"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://_scenes/aid_pickup.tscn" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="3_85g3d"]
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://_scripts/mask_canvas_layer.gd" id="3_344ge"]
@@ -93,6 +94,11 @@ position = Vector2(1276.1829, 1048.3928)
 scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
+
+[node name="GrassA" type="Sprite2D" parent="Ground" unique_id=2001118843]
+position = Vector2(-508, -559)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_44f6i")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1379805591]
 y_sort_enabled = true
