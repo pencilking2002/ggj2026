@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ce6im17fwmytp"]
+
+[ext_resource type="Script" uid="uid://dkypjhapqve4m" path="res://_scripts/menu.gd" id="1_dsi36"]
+[ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="1_r7r5g"]
+
+[node name="Menu" type="Control" unique_id=945732434]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dsi36")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1650561764]
+layout_mode = 0
+offset_right = 961.0
+offset_bottom = 541.0
+color = Color(0.010334919, 0.029638719, 0.05397293, 1)
+
+[node name="FakeTitle" type="Label" parent="." unique_id=369669574]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 84.0
+offset_right = 778.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("1_r7r5g")
+theme_override_font_sizes/font_size = 28
+text = "Whatever The Title of the Game Is "
+
+[node name="Button" type="Button" parent="." unique_id=1283168818]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 220.0
+offset_right = 566.0
+offset_bottom = 256.0
+theme_override_colors/font_color = Color(1, 0.45490196, 0.5019608, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(0.8156863, 0, 0.20784314, 1)
+theme_override_colors/font_hover_color = Color(0.8860119, 0.50182045, 0.4511181, 1)
+theme_override_colors/icon_normal_color = Color(0.28309062, 0.060719118, 0.09125126, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_r7r5g")
+theme_override_font_sizes/font_size = 26
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
