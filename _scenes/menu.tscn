@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkypjhapqve4m" path="res://_scripts/menu.gd" id="1_dsi36"]
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="1_r7r5g"]
+[ext_resource type="Texture2D" uid="uid://cdx6w320vwqse" path="res://_textures/menu/GasMask.png" id="3_cyobc"]
 
 [node name="Menu" type="Control" unique_id=945732434]
 layout_mode = 3
@@ -26,10 +27,10 @@ text = "Whatever The Title of the Game Is "
 
 [node name="Button" type="Button" parent="." unique_id=1283168818]
 layout_mode = 0
-offset_left = 398.0
-offset_top = 220.0
-offset_right = 566.0
-offset_bottom = 256.0
+offset_left = 209.0
+offset_top = 191.0
+offset_right = 386.0
+offset_bottom = 227.0
 theme_override_colors/font_color = Color(1, 0.45490196, 0.5019608, 1)
 theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_pressed_color = Color(0.8156863, 0, 0.20784314, 1)
@@ -39,5 +40,10 @@ theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_r7r5g")
 theme_override_font_sizes/font_size = 26
 text = "Start Game"
+
+[node name="GasMask" type="Sprite2D" parent="." unique_id=2048122118]
+position = Vector2(676, 330)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_cyobc")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
