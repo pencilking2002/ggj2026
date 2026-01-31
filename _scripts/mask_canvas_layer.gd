@@ -15,7 +15,7 @@ static var eye_falloff_str: String = "eye_falloff"
 var color_rect_mat: Material
 
 func _ready() -> void:
-
+	SoundManager.play_level_music()
 	if not is_mask_enabled:
 		visible = false
 	else:
