@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c6qocawtnf6dr"]
+
+[ext_resource type="Script" uid="uid://de313wobstja0" path="res://_scripts/sound_manager.gd" id="1_25ke0"]
+[ext_resource type="AudioStream" uid="uid://djh1fx5qba2u2" path="res://_soundeffects/maskbreathing.ogg" id="2_1ohty"]
+[ext_resource type="AudioStream" uid="uid://cxyeet0wnh0yr" path="res://_soundeffects/geiger_single.ogg" id="3_1ohty"]
+
+
+[node name="SoundManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_25ke0")
+
+[node name="SoundMask" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1ohty")
+
+[node name="GeigerSingle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1ohty")

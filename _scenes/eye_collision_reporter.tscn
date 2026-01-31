@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ndi83vbix6fj"]
+
+[ext_resource type="Script" uid="uid://cdt7wmy8122cp" path="res://_scripts/eye_collision_reporter.gd" id="1_7g6qj"]
+
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15ttc"]
+radius = 53.235325
+
+[node name="EyeCollisionReporterArea2D" type="Area2D" unique_id=2011501470]
+script = ExtResource("1_7g6qj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830180340]
+shape = SubResource("CircleShape2D_15ttc")

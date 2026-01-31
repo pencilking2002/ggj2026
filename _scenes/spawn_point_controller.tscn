@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://da7k2ep7tyap"]
+
+[ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="1_hs1qn"]
+
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kry3j"]
+radius = 975.0621
+
+[node name="SpawnPointController" type="Area2D" unique_id=498951010 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
+script = ExtResource("1_hs1qn")
+circle = NodePath("SpawmArea")
+
+[node name="SpawmArea" type="CollisionShape2D" parent="." unique_id=429953236]
+shape = SubResource("CircleShape2D_kry3j")
