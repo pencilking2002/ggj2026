@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciqvimjnvrcgi"
-path="res://.godot/imported/Grass_Tuft_A.png-9b109284b14a78af5350c7d3e0216f5c.ctex"
+uid="uid://cujsxmcfwdcyj"
+path="res://.godot/imported/Grass05.png-335311eae88969e19edd5599b6a768db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_textures/env/Grass_Tuft_A.png"
-dest_files=["res://.godot/imported/Grass_Tuft_A.png-9b109284b14a78af5350c7d3e0216f5c.ctex"]
+source_file="res://_textures/env/Grass05.png"
+dest_files=["res://.godot/imported/Grass05.png-335311eae88969e19edd5599b6a768db.ctex"]
 
 [params]
 

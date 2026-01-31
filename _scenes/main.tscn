@@ -2,16 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://_scenes/Player.tscn" id="1_21xkr"]
 [ext_resource type="Texture2D" uid="uid://do83hkfs6k7de" path="res://_textures/env/dirt.jpg" id="2_6bp64"]
-[ext_resource type="Texture2D" uid="uid://ciqvimjnvrcgi" path="res://_textures/env/Grass_Tuft_A.png" id="2_44f6i"]
+[ext_resource type="Texture2D" uid="uid://cw5aaso40p04" path="res://_textures/env/Grass01.png" id="2_6glfe"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://_scenes/aid_pickup.tscn" id="2_tipki"]
+[ext_resource type="Texture2D" uid="uid://dpeun661nn62m" path="res://_textures/env/Grass02.png" id="3_81q0l"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="3_85g3d"]
 [ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://_scripts/mask_canvas_layer.gd" id="3_344ge"]
+[ext_resource type="Texture2D" uid="uid://b332q6f3g6ctw" path="res://_textures/env/Grass03.png" id="4_0jinp"]
 [ext_resource type="Shader" uid="uid://beily781xjedx" path="res://_shaders/Mask.gdshader" id="4_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://bj1q4uyg1uydl" path="res://_textures/env/Grass04.png" id="5_lfnwg"]
 [ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://_scenes/spawn_point_controller.tscn" id="6_21xkr"]
+[ext_resource type="Texture2D" uid="uid://cujsxmcfwdcyj" path="res://_textures/env/Grass05.png" id="6_wot5j"]
 [ext_resource type="Texture2D" uid="uid://gi73rrx7jcy8" path="res://_textures/ui/meter.png" id="7_choun"]
+[ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="7_lfnwg"]
 [ext_resource type="Texture2D" uid="uid://be70q7orm6rgf" path="res://_textures/ui/circle.png" id="8_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
 [ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="8_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://ncve032or807" path="res://_textures/env/skelehand.png" id="9_sensu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -95,10 +102,45 @@ scale = Vector2(0.50727487, 0.50727487)
 texture = ExtResource("2_6bp64")
 offset = Vector2(-3521.3335, -1044.0001)
 
-[node name="GrassA" type="Sprite2D" parent="Ground" unique_id=2001118843]
-position = Vector2(-508, -559)
+[node name="Grass01" type="Sprite2D" parent="Ground" unique_id=2041342421]
+position = Vector2(-465, -519)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_44f6i")
+texture = ExtResource("2_6glfe")
+
+[node name="Grass02" type="Sprite2D" parent="Ground" unique_id=1241976370]
+position = Vector2(-442, -359)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_81q0l")
+
+[node name="Grass03" type="Sprite2D" parent="Ground" unique_id=46173658]
+position = Vector2(-192, -469)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0jinp")
+
+[node name="Grass04" type="Sprite2D" parent="Ground" unique_id=154449560]
+position = Vector2(-229, -292)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_lfnwg")
+
+[node name="Grass05" type="Sprite2D" parent="Ground" unique_id=1667513680]
+position = Vector2(-440, -243)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_wot5j")
+
+[node name="Grass06" type="Sprite2D" parent="Ground" unique_id=98929462]
+position = Vector2(-453, -182)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_lfnwg")
+
+[node name="Grass07" type="Sprite2D" parent="Ground" unique_id=1603290558]
+position = Vector2(-434, -90)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_wot5j")
+
+[node name="Skelehand" type="Sprite2D" parent="Ground" unique_id=728657538]
+position = Vector2(-234, -122)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_sensu")
 
 [node name="Objects" type="Node2D" parent="." unique_id=1379805591]
 y_sort_enabled = true
@@ -222,9 +264,11 @@ pivot_offset = Vector2(5, 30)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a8y0u")
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
+visible = false
 position = Vector2(7, -9)
 collision_layer = 0
 collision_mask = 0
 
 [node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
+visible = false
 position = Vector2(465, 337)
