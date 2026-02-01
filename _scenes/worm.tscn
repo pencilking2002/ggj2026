@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://ba0sn1c0nqv61"]
 
 [ext_resource type="Script" uid="uid://cg5jnedyonhyj" path="res://_scripts/worm.gd" id="1_n80vc"]
-[ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://_resources/worm_settings.tres" id="2_x1856"]
+[ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://_resources/worm_settings.tres" id="3_60o28"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="3_ttset"]
-[ext_resource type="Texture2D" uid="uid://cpmqojcm4gfi1" path="res://_textures/worm/pop up/final-1.png" id="4_jgcky"]
-[ext_resource type="Texture2D" uid="uid://btx1ke5f5yxcm" path="res://_textures/worm/pop up/final-2.png" id="5_8p47o"]
-[ext_resource type="Texture2D" uid="uid://epliedwn4lvr" path="res://_textures/worm/pop up/final-3.png" id="6_qv562"]
-[ext_resource type="Texture2D" uid="uid://ltoe4x05yvjq" path="res://_textures/worm/pop up/final-4.png" id="7_wwcjj"]
-[ext_resource type="Texture2D" uid="uid://ct8s1oslmunep" path="res://_textures/worm/pop up/final-5.png" id="8_evg77"]
-[ext_resource type="Texture2D" uid="uid://bckpkavgwxr0q" path="res://_textures/worm/pop up/final-6.png" id="9_2j3ka"]
-[ext_resource type="Texture2D" uid="uid://kvsxqob5pqx0" path="res://_textures/worm/pop up/final-7.png" id="10_snowy"]
-[ext_resource type="Texture2D" uid="uid://bbv2tht5oko3u" path="res://_textures/worm/pop up/final-8.png" id="11_p6mr2"]
-[ext_resource type="Texture2D" uid="uid://d37llt6sec02p" path="res://_textures/worm/pop up/final-9.png" id="12_ovgx0"]
-[ext_resource type="Texture2D" uid="uid://bh6vmuyu4gcnd" path="res://_textures/worm/pop up/final-10.png" id="13_r23yu"]
-[ext_resource type="Texture2D" uid="uid://bu1r3p4mcjet8" path="res://_textures/worm/pop up/final-11.png" id="14_fejak"]
+[ext_resource type="Texture2D" uid="uid://cpmqojcm4gfi1" path="res://_textures/worm/popup/final-1.png" id="4_jgcky"]
+[ext_resource type="Texture2D" uid="uid://btx1ke5f5yxcm" path="res://_textures/worm/popup/final-2.png" id="5_8p47o"]
+[ext_resource type="Texture2D" uid="uid://epliedwn4lvr" path="res://_textures/worm/popup/final-3.png" id="6_qv562"]
+[ext_resource type="Texture2D" uid="uid://ltoe4x05yvjq" path="res://_textures/worm/popup/final-4.png" id="7_wwcjj"]
+[ext_resource type="Texture2D" uid="uid://ct8s1oslmunep" path="res://_textures/worm/popup/final-5.png" id="8_evg77"]
+[ext_resource type="Texture2D" uid="uid://bckpkavgwxr0q" path="res://_textures/worm/popup/final-6.png" id="9_2j3ka"]
+[ext_resource type="Texture2D" uid="uid://kvsxqob5pqx0" path="res://_textures/worm/popup/final-7.png" id="10_snowy"]
+[ext_resource type="Texture2D" uid="uid://bbv2tht5oko3u" path="res://_textures/worm/popup/final-8.png" id="11_p6mr2"]
+[ext_resource type="Texture2D" uid="uid://d37llt6sec02p" path="res://_textures/worm/popup/final-9.png" id="12_ovgx0"]
+[ext_resource type="Texture2D" uid="uid://bh6vmuyu4gcnd" path="res://_textures/worm/popup/final-10.png" id="13_r23yu"]
+[ext_resource type="Texture2D" uid="uid://bu1r3p4mcjet8" path="res://_textures/worm/popup/final-11.png" id="14_fejak"]
+[ext_resource type="Texture2D" uid="uid://bgndohwqkcbyd" path="res://_textures/worm/idle/final-1.png" id="15_60o28"]
+[ext_resource type="Texture2D" uid="uid://bluqjl3mut80a" path="res://_textures/worm/idle/final-2.png" id="16_spq23"]
+[ext_resource type="Texture2D" uid="uid://c76vaw016upkq" path="res://_textures/worm/idle/final-3.png" id="17_ifgm0"]
+[ext_resource type="Texture2D" uid="uid://bhanr338giyqu" path="res://_textures/worm/idle/final-4.png" id="18_4wm6o"]
+[ext_resource type="Texture2D" uid="uid://cg0ymr5iwnsjp" path="res://_textures/worm/idle/final-5.png" id="19_pus0y"]
+[ext_resource type="Texture2D" uid="uid://blvenw38nwjam" path="res://_textures/worm/idle/final-6.png" id="20_uan7n"]
+[ext_resource type="Texture2D" uid="uid://ce0raop7jlr7c" path="res://_textures/worm/idle/final-7.png" id="21_xommm"]
+[ext_resource type="Texture2D" uid="uid://cpkerxny447dh" path="res://_textures/worm/idle/final-8.png" id="22_6m25i"]
+[ext_resource type="Texture2D" uid="uid://csxfqgpsb6iln" path="res://_textures/worm/idle/final-9.png" id="23_w7cnq"]
+[ext_resource type="Texture2D" uid="uid://b80a85n13rhya" path="res://_textures/worm/idle/final-10.png" id="24_xbc6u"]
+[ext_resource type="Texture2D" uid="uid://b73itxs4yx533" path="res://_textures/worm/idle/final-11.png" id="25_vqwdw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttset"]
 shader = ExtResource("3_ttset")
@@ -75,9 +86,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_evg77")
+"texture": ExtResource("15_60o28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_spq23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ifgm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4wm6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pus0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uan7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xommm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6m25i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_w7cnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xbc6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vqwdw")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 10.0
 }]
@@ -85,7 +126,7 @@ animations = [{
 [node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("anim_sprite") groups=["worms"]]
 material = SubResource("ShaderMaterial_ttset")
 script = ExtResource("1_n80vc")
-worm_settings = ExtResource("2_x1856")
+worm_settings = ExtResource("3_60o28")
 anim_sprite = NodePath("AnimatedSprite2D")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=590163756]
@@ -97,7 +138,8 @@ shape = SubResource("RectangleShape2D_ttset")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=503673576]
 material = SubResource("ShaderMaterial_jgcky")
-position = Vector2(13, -72)
-scale = Vector2(0.45898435, 0.45898435)
+position = Vector2(1, -52)
+scale = Vector2(0.3330078, 0.3330078)
 sprite_frames = SubResource("SpriteFrames_60o28")
 animation = &"idle"
+frame_progress = 0.15305947
