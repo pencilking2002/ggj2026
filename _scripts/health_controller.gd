@@ -9,6 +9,8 @@ var delta_time : float
 func _ready():
 	# Set the player's health at the start of the game
 	set_health(max_health)
+	SignalController.on_pickup_toxic_item.connect(pickup_toxic_item)
+	SignalController.on_pickup_health_item.connect(pickup_health_item)
 
 func decrement_health():
 	var prev_health : float = health
@@ -26,6 +28,12 @@ func decrement_health():
 func do_gameover():
 	SoundManager.stop_level_music()
 	get_tree().change_scene_to_file("res://_scenes/lose_menu.tscn")
+
+func pickup_toxic_item():
+	set_health(health-20)
+
+func pickup_health_item():
+	set_health(health+20)
 	
 #func increment_health():
 #	var prev_health : int = health

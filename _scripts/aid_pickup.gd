@@ -6,3 +6,8 @@ func _ready() -> void:
 
 func can_be_collected() -> bool:
 	return true
+	
+func collect():
+	SoundManager.play_sound_pills()
+	SignalController.on_pickup_health_item.emit()
+	super()

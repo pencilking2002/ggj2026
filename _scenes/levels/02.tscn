@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="9_xqieb"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="10_q5mhv"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="11_dsdj0"]
+[ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="12_jofes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3kwq"]
 size = Vector2(633.9111, 3118)
@@ -23,6 +24,9 @@ size = Vector2(3305, 561)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i82p"]
 size = Vector2(633.9111, 3093)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3bmw"]
+radius = 666.5883
 
 [node name="Root" type="Node2D" unique_id=252403133]
 
@@ -164,3 +168,12 @@ texture = ExtResource("9_xqieb")
 
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("11_dsdj0")]
 position = Vector2(-136, 106)
+
+[node name="SpawnPointController" type="Area2D" parent="." unique_id=1381015914 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
+position = Vector2(222, 195)
+script = ExtResource("12_jofes")
+circle = NodePath("SpawnArea")
+
+[node name="SpawnArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=1509499464]
+position = Vector2(39, 44)
+shape = SubResource("CircleShape2D_n3bmw")

@@ -91,6 +91,7 @@ func can_be_collected() -> bool:
 func collect():
 	set_state(WormStateEnum.CAUGHT)
 	SignalController.on_check_win_condition.emit()
+	SoundManager.play_sound_worm_scream()
 	super()
 	
 #func _draw():

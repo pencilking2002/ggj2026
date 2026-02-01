@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bj1q4uyg1uydl" path="res://_textures/env/Grass04.png" id="9_bcutu"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="10_wfuci"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="11_a2h6g"]
+[ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="12_smp5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3kwq"]
 size = Vector2(633.9111, 3118)
@@ -161,6 +162,17 @@ texture = ExtResource("2_6ut3n")
 position = Vector2(331, -518)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_r6qi0")
+
+[node name="Tire" type="Sprite2D" parent="Objects" unique_id=325676344]
+position = Vector2(558, -169)
+scale = Vector2(0.4992629, 0.4992629)
+texture = ExtResource("12_smp5j")
+flip_h = true
+
+[node name="Tire2" type="Sprite2D" parent="Objects" unique_id=685941382]
+position = Vector2(-458, 26)
+scale = Vector2(0.4992629, 0.4992629)
+texture = ExtResource("12_smp5j")
 
 [node name="Worm" parent="." unique_id=952066793 instance=ExtResource("11_a2h6g")]
 position = Vector2(-190, 587)

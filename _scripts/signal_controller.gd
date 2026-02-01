@@ -8,3 +8,5 @@ signal on_game_over
 signal on_win_level
 signal on_check_win_condition
 signal on_player_first_move
+signal on_pickup_toxic_item
+signal on_pickup_health_item

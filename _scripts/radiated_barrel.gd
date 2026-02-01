@@ -6,4 +6,6 @@ func _ready() -> void:
 	is_toxic = true
 
 func collect():
+	SoundManager.play_sound_radiation()
+	SignalController.on_pickup_toxic_item.emit()
 	print("Collect barrel")

@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b332q6f3g6ctw" path="res://_textures/env/Grass03.png" id="4_0jinp"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://bj1q4uyg1uydl" path="res://_textures/env/Grass04.png" id="5_lfnwg"]
-[ext_resource type="PackedScene" uid="uid://da7k2ep7tyap" path="res://_scenes/spawn_point_controller.tscn" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://cujsxmcfwdcyj" path="res://_textures/env/Grass05.png" id="6_wot5j"]
 [ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="7_lfnwg"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
@@ -19,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="11_bas5x"]
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="12_b5txm"]
 [ext_resource type="PackedScene" uid="uid://cawj207a2qagq" path="res://_scenes/mask_ui.tscn" id="17_wot5j"]
+[ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="20_wot5j"]
 [ext_resource type="PackedScene" uid="uid://bldqitl1jxmyx" path="res://_scenes/game_manager.tscn" id="27_b5txm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
@@ -26,6 +26,9 @@ size = Vector2(633.9111, 4413)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kln2b"]
 size = Vector2(5060, 561)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sensu"]
+radius = 975.0
 
 [node name="Root" type="Node2D" unique_id=1222739125]
 
@@ -191,14 +194,15 @@ position = Vector2(103, -418)
 
 [node name="MaskCanvasLayer" parent="." unique_id=597918302 instance=ExtResource("17_wot5j")]
 
-[node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
-visible = false
-position = Vector2(7, -9)
-collision_layer = 0
-collision_mask = 0
-
 [node name="Player" parent="." unique_id=173045213 instance=ExtResource("1_21xkr")]
 visible = false
 position = Vector2(465, 337)
 
 [node name="GameManager" parent="." unique_id=970100861 instance=ExtResource("27_b5txm")]
+
+[node name="SpawnPointController" type="Area2D" parent="." unique_id=498951010 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
+script = ExtResource("20_wot5j")
+circle = NodePath("SpawnArea")
+
+[node name="SpawnArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=429953236]
+shape = SubResource("CircleShape2D_sensu")
