@@ -16,7 +16,7 @@ static var eye_falloff_str: String = "eye_falloff"
 var color_rect_mat: Material
 
 func _ready() -> void:
-	level_text.text = str("0", GameManager.curr_level_index+1)
+	level_text.text = str("LEVEL 0", GameManager.curr_level_index+1)
 	SignalController.on_player_first_move.connect(player_first_move)
 	#SoundManager.play_level_music()
 	if not is_mask_enabled:

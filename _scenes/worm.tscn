@@ -112,7 +112,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_f1sfj")
 }],
-"loop": true,
+"loop": false,
 "name": &"dive",
 "speed": 10.0
 }, {
@@ -229,7 +229,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("49_ffea1")
 }],
-"loop": true,
+"loop": false,
 "name": &"youdied",
 "speed": 10.0
 }]
@@ -252,6 +252,4 @@ material = SubResource("ShaderMaterial_jgcky")
 position = Vector2(6, -60.296883)
 scale = Vector2(0.2734375, 0.2734375)
 sprite_frames = SubResource("SpriteFrames_60o28")
-animation = &"capture"
-frame = 3
-frame_progress = 0.3868932
+animation = &"youdied"
