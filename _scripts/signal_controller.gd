@@ -5,3 +5,4 @@ signal on_item_exited
 signal on_health_changed
 signal on_stop_health_change
 signal on_game_over
+signal on_win_level

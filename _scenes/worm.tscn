@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c44ujxvx2qhom" path="res://_textures/tests/test_worm_ss.png" id="3_lley5"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="3_ttset"]
 
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttset"]
 shader = ExtResource("3_ttset")
 shader_parameter/highlight_color = Color(0.43254668, 0.31276858, 0.10087853, 1)
@@ -73,7 +72,7 @@ _data = {
 &"idle": SubResource("Animation_ttset")
 }
 
-[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("animator", "sprite")]
+[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("animator", "sprite") groups=["worms"]]
 material = SubResource("ShaderMaterial_ttset")
 script = ExtResource("1_n80vc")
 animator = NodePath("AnimationPlayer")
