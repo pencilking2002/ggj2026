@@ -2,8 +2,18 @@
 
 [ext_resource type="Script" uid="uid://cg5jnedyonhyj" path="res://_scripts/worm.gd" id="1_n80vc"]
 [ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://_resources/Worms/worm_settings.tres" id="2_x1856"]
-[ext_resource type="Texture2D" uid="uid://c44ujxvx2qhom" path="res://_textures/tests/test_worm_ss.png" id="3_lley5"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="3_ttset"]
+[ext_resource type="Texture2D" uid="uid://cpmqojcm4gfi1" path="res://_textures/worm/pop up/final-1.png" id="4_jgcky"]
+[ext_resource type="Texture2D" uid="uid://btx1ke5f5yxcm" path="res://_textures/worm/pop up/final-2.png" id="5_8p47o"]
+[ext_resource type="Texture2D" uid="uid://epliedwn4lvr" path="res://_textures/worm/pop up/final-3.png" id="6_qv562"]
+[ext_resource type="Texture2D" uid="uid://ltoe4x05yvjq" path="res://_textures/worm/pop up/final-4.png" id="7_wwcjj"]
+[ext_resource type="Texture2D" uid="uid://ct8s1oslmunep" path="res://_textures/worm/pop up/final-5.png" id="8_evg77"]
+[ext_resource type="Texture2D" uid="uid://bckpkavgwxr0q" path="res://_textures/worm/pop up/final-6.png" id="9_2j3ka"]
+[ext_resource type="Texture2D" uid="uid://kvsxqob5pqx0" path="res://_textures/worm/pop up/final-7.png" id="10_snowy"]
+[ext_resource type="Texture2D" uid="uid://bbv2tht5oko3u" path="res://_textures/worm/pop up/final-8.png" id="11_p6mr2"]
+[ext_resource type="Texture2D" uid="uid://d37llt6sec02p" path="res://_textures/worm/pop up/final-9.png" id="12_ovgx0"]
+[ext_resource type="Texture2D" uid="uid://bh6vmuyu4gcnd" path="res://_textures/worm/pop up/final-10.png" id="13_r23yu"]
+[ext_resource type="Texture2D" uid="uid://bu1r3p4mcjet8" path="res://_textures/worm/pop up/final-11.png" id="14_fejak"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttset"]
 shader = ExtResource("3_ttset")
@@ -13,71 +23,58 @@ shader_parameter/blink_strength = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttset"]
 size = Vector2(86, 138)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdamb"]
-shader = ExtResource("3_ttset")
-shader_parameter/highlight_color = Color(0.2173425, 0.14772567, 0.030302892, 1)
-shader_parameter/blink_strength = 0.0
-
-[sub_resource type="Animation" id="Animation_lley5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_tdamb"]
-resource_name = "dive"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.40000004),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 9, 10, 11, 12, 13, 20]
-}
-
-[sub_resource type="Animation" id="Animation_ttset"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3, 0.39999998, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tdamb"]
-_data = {
-&"RESET": SubResource("Animation_lley5"),
-&"dive": SubResource("Animation_tdamb"),
-&"idle": SubResource("Animation_ttset")
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_60o28"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jgcky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8p47o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qv562")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wwcjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_evg77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2j3ka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_snowy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p6mr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ovgx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r23yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fejak")
+}],
+"loop": false,
+"name": &"wormup",
+"speed": 10.0
+}]
 
 [node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("animator", "sprite") groups=["worms"]]
 material = SubResource("ShaderMaterial_ttset")
 script = ExtResource("1_n80vc")
-animator = NodePath("AnimationPlayer")
+animator = NodePath("")
 worm_settings = ExtResource("2_x1856")
-sprite = NodePath("Sprite")
+sprite = NodePath("")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=590163756]
 position = Vector2(9, -115)
@@ -86,15 +83,10 @@ position = Vector2(9, -115)
 position = Vector2(-5, 46)
 shape = SubResource("RectangleShape2D_ttset")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=795742947]
-texture_filter = 1
-material = SubResource("ShaderMaterial_tdamb")
-position = Vector2(9, -114)
-scale = Vector2(8, 8)
-texture = ExtResource("3_lley5")
-hframes = 8
-vframes = 8
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1835339829]
-libraries/ = SubResource("AnimationLibrary_tdamb")
-speed_scale = 0.75
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=503673576]
+position = Vector2(10, -55.000004)
+scale = Vector2(0.45898435, 0.45898435)
+sprite_frames = SubResource("SpriteFrames_60o28")
+animation = &"wormup"
+frame = 10
+frame_progress = 1.0
