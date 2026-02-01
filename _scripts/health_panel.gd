@@ -1,6 +1,7 @@
 extends Panel
 
 @export var health_bar : TextureProgressBar
+@export var needle : Control
 @export var default_color : Color
 @export var hurt_color : Color
 @export var heal_color : Color
@@ -30,6 +31,7 @@ func on_health_changed(prev_health : int, new_health : int) -> void:
 	
 	if prev_health > new_health:
 		health_label.add_theme_color_override("font_color", hurt_color)
+		needle.rotation_degrees = -10.0 + randf() * -10.0
 	elif prev_health < new_health:
 		health_label.add_theme_color_override("font_color", heal_color)
 
@@ -38,3 +40,6 @@ func on_stop_health_change() -> void:
 		health_label.add_theme_font_size_override("font_size", 30)
 		health_label.add_theme_color_override("font_color", default_color)
 		is_health_being_updated = false
+		var tween : Tween = create_tween()
+		tween.tween_property(needle, "rotation_degrees", -90, 0.1)
+		# needle.rotation_degrees = -90
