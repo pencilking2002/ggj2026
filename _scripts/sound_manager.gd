@@ -27,7 +27,12 @@ func play_sound_worm_scream():
 
 func stop_sound_worm_scream():
 	$Wormscream.stop()
-	
+
+func play_sound_dig():
+	$Dig.play()
+
+func stop_sound_dig():
+	$Dig.stop()
 
 
 
