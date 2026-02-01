@@ -2,6 +2,7 @@ class_name Worm extends SpottableItem
 
 @export var animator: AnimationPlayer
 @export var worm_settings:WormSettings
+@export var is_idle_state_only : bool
 var idle_duration : float
 var last_dive_time: float
 var last_emerge_time: float
@@ -21,20 +22,15 @@ enum WormStateEnum {
 func _ready():
 	init()
 	animator.play("idle")
-	cache_player()
 	idle_duration = worm_settings.idle_duration + randf_range(0, worm_settings.idle_duration_variance)
-	
-func cache_player():
-	var nodes : Array[Node] = get_tree().get_nodes_in_group("player")
-	if nodes.size() > 0:
-		player = nodes[0]
-	else:
-		print("unable to located player")
 	
 func set_state(input_state: WormStateEnum):
 	worm_state = input_state
 	
 func _process(delta: float):
+	if is_idle_state_only:
+		return
+		
 	time_elapsed += delta
 	update_worm_state()
 	
@@ -77,7 +73,7 @@ func can_be_collected() -> bool:
 	
 #func _draw():
 #	var start_point : Vector2 = position
-#	var end_point : Vector2 = player.position
+#	var end_point : Vector2 = GameManager.get_player().position
 #	var line_color = Color.WHITE
 #	var line_thickness = 3
 #	
