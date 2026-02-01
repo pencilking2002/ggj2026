@@ -39,6 +39,7 @@ func stop_sound_dig():
 
 
 
+
 func play_sound_geiger_single(max_variance : float = 0.0):
 	$GeigerSingle.pitch_scale = 1.0 + randf() * max_variance
 	$GeigerSingle.play()
@@ -85,3 +86,9 @@ func play_gameover_music():
 
 func stop_gameover_music():
 	$GameOverMusic.stop()
+	
+func play_win_music():
+	$WinMusic.play()
+
+func stop_win_music():
+	$WinMusic.stop()
