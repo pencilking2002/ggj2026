@@ -2,13 +2,14 @@ extends CanvasLayer
 
 @export var level : int
 @export var fade_in_duration := 1.0
+@export var target_alpha := 0.33
 
 func _ready() -> void:
 	fade_in()
 
 func fade_in():
-	var tween = get_tree().create_tween()
-	tween.tween_property($ColorRect, 'modulate:a', 255, fade_in_duration).set_trans(Tween.TRANS_SINE)
+	var tween = create_tween()
+	tween.tween_property($ColorRect, 'modulate', Color(0,0,0,target_alpha), fade_in_duration).set_trans(Tween.TRANS_SINE)
 
 func _input(event):
 	if event is InputEventKey:
