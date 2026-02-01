@@ -16,6 +16,10 @@ func decrement_health():
 	health = clamp(health,0, max_health)
 	SignalController.on_health_changed.emit(prev_health, health)
 	
+	# Play gieger click every time 1.0 health is removed
+	if fmod(health, 1.0) < 0.01:
+		SoundManager.play_sound_geiger_single(0.2)	
+	
 	if health == 0.0:
 		SignalController.on_game_over.emit()
 

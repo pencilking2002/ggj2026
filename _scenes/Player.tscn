@@ -27,4 +27,4 @@ position = Vector2(216, -120)
 
 [node name="health_controller" type="Node2D" parent="." unique_id=1261099576]
 script = ExtResource("3_1mdib")
-hurt_speed = 8.0
+hurt_speed = 15.0
