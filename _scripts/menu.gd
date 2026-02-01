@@ -9,9 +9,9 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
 			start_game()
-
-func _on_button_pressed() -> void:
-	start_game()
+	elif event is InputEventMouseButton:
+		if event.pressed:
+			start_game()
 
 func start_game() -> void:
 	SoundManager.play_sound_geiger_single()

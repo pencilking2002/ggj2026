@@ -4,8 +4,6 @@
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="1_r7r5g"]
 [ext_resource type="Texture2D" uid="uid://cdx6w320vwqse" path="res://_textures/menu/GasMask.png" id="3_cyobc"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cyobc"]
-
 [node name="Menu" type="Control" unique_id=945732434]
 layout_mode = 3
 anchors_preset = 0
@@ -19,24 +17,6 @@ offset_top = -15.0
 offset_right = 974.0
 offset_bottom = 555.0
 color = Color(0.010334919, 0.029638719, 0.05397293, 1)
-
-[node name="Button" type="Button" parent="." unique_id=1283168818]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 0
-offset_left = 185.0
-offset_top = 427.0
-offset_right = 707.0
-offset_bottom = 477.0
-theme_override_colors/font_color = Color(1, 0.45490196, 0.5019608, 1)
-theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_colors/font_pressed_color = Color(0.8156863, 0, 0.20784314, 1)
-theme_override_colors/font_hover_color = Color(0.8860119, 0.50182045, 0.4511181, 1)
-theme_override_colors/icon_normal_color = Color(0.28309062, 0.060719118, 0.09125126, 1)
-theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_r7r5g")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = SubResource("StyleBoxEmpty_cyobc")
-text = "PRESS ANY KEY TO START"
 
 [node name="GasMask" type="Sprite2D" parent="." unique_id=2048122118]
 position = Vector2(482, 233)
@@ -87,4 +67,15 @@ theme_override_fonts/font = ExtResource("1_r7r5g")
 theme_override_font_sizes/font_size = 51
 text = "Mask"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="CTA" type="Label" parent="." unique_id=1967514661]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 431.0
+offset_right = 635.0
+offset_bottom = 481.0
+theme_override_colors/font_color = Color(0.99607843, 0.45490196, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("1_r7r5g")
+theme_override_font_sizes/font_size = 20
+text = "PRESS ANY KEY TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
