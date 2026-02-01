@@ -21,8 +21,12 @@ func decrement_health():
 		SoundManager.play_sound_geiger_single(0.2)	
 	
 	if health == 0.0:
-		SignalController.on_game_over.emit()
-
+		do_gameover()
+		
+func do_gameover():
+	SoundManager.stop_menu_music()
+	get_tree().change_scene_to_file("res://_scenes/lose_menu.tscn")
+	
 #func increment_health():
 #	var prev_health : int = health
 #	health += 1
