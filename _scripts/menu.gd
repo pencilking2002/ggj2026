@@ -16,5 +16,6 @@ func _input(event):
 func start_game() -> void:
 	SoundManager.play_sound_geiger_single()
 	SoundManager.stop_menu_music()
+	SoundManager.play_level_music()
 	var scene_path : String = GameManager.load_level(0)
 	print ("Level to load: ", scene_path)
