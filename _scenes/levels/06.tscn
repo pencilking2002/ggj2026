@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="12_a01qo"]
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="13_gtt8s"]
 [ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="14_cil4c"]
-[ext_resource type="PackedScene" path="res://_scenes/radiated_slime.tscn" id="14_goy8u"]
+[ext_resource type="PackedScene" uid="uid://den2au44x5te5" path="res://_scenes/radiated_slime.tscn" id="14_goy8u"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="15_x2pv4"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="16_7wyml"]
 [ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="17_ov6jr"]
@@ -194,10 +194,9 @@ position = Vector2(1080, 424.00006)
 scale = Vector2(0.47588536, 0.47588536)
 flip_h = true
 
-[node name="RadiatedBarrel5" parent="Objects" unique_id=500442401 instance=ExtResource("15_x2pv4")]
-position = Vector2(1047.9999, -952.69324)
-scale = Vector2(0.390625, 0.390625)
-centered = false
+[node name="RadiatedBarrel5" parent="Objects" unique_id=936444004 instance=ExtResource("15_x2pv4")]
+position = Vector2(1312, -775)
+scale = Vector2(0.47588536, 0.47588536)
 
 [node name="AidPickup2" parent="Objects" unique_id=1619835555 instance=ExtResource("5_8vvxl")]
 position = Vector2(1248, 880)
@@ -214,10 +213,12 @@ position = Vector2(-265, -773)
 position = Vector2(881, -592)
 
 [node name="SpawnPointController" type="Area2D" parent="." unique_id=1157829264 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
+visible = false
 position = Vector2(222, 195)
 script = ExtResource("17_ov6jr")
 circle = NodePath("SpawnArea")
 
 [node name="SpawnArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=690578510]
+visible = false
 position = Vector2(206, -131)
 shape = SubResource("CircleShape2D_eocl3")

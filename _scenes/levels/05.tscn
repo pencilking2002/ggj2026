@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cujsxmcfwdcyj" path="res://_textures/env/Grass05.png" id="10_eg7ku"]
 [ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="11_wi8tq"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="12_0dmuv"]
-[ext_resource type="PackedScene" path="res://_scenes/radiated_slime.tscn" id="13_vu4ki"]
+[ext_resource type="PackedScene" uid="uid://den2au44x5te5" path="res://_scenes/radiated_slime.tscn" id="13_vu4ki"]
 [ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="14_0p8jt"]
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="14_esiwo"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="15_vu4ki"]
@@ -153,13 +153,12 @@ texture = ExtResource("14_0p8jt")
 position = Vector2(896, -248)
 scale = Vector2(0.45552182, 0.2955206)
 
-[node name="RadiatedBarrel5" parent="Objects" unique_id=500442401 instance=ExtResource("15_vu4ki")]
-position = Vector2(-552, -36.208694)
-scale = Vector2(0.47588536, 0.47588536)
-centered = false
-
 [node name="AidPickup2" parent="Objects" unique_id=1619835555 instance=ExtResource("4_vu4ki")]
 position = Vector2(744, 559.7913)
+
+[node name="RadiatedBarrel5" parent="Objects" unique_id=673853736 instance=ExtResource("15_vu4ki")]
+position = Vector2(-367.99988, 711.9999)
+scale = Vector2(0.47588536, 0.47588536)
 
 [node name="Worms" type="Node2D" parent="." unique_id=2082652491]
 
@@ -173,10 +172,12 @@ position = Vector2(664, -320)
 position = Vector2(-280, -376)
 
 [node name="SpawnPointController" type="Area2D" parent="." unique_id=1157829264 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
+visible = false
 position = Vector2(222, 195)
 script = ExtResource("17_vu4ki")
 circle = NodePath("SpawnArea")
 
 [node name="SpawnArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=690578510]
+visible = false
 position = Vector2(90, -67)
 shape = SubResource("CircleShape2D_eocl3")

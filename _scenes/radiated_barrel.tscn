@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="1_42qok"]
 [ext_resource type="Script" uid="uid://divdy3afmw8o8" path="res://_scripts/radiated_barrel.gd" id="1_ip2aw"]
-[ext_resource type="Texture2D" uid="uid://bvrul5afb7pd3" path="res://_textures/env/waste.png" id="2_42qok"]
+[ext_resource type="Texture2D" uid="uid://cnrlhg8im3jy1" path="res://_textures/env/waste.png" id="2_42qok"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kh4ok"]
 shader = ExtResource("1_42qok")
@@ -22,7 +22,6 @@ sprite = NodePath(".")
 [node name="Area2D" type="Area2D" parent="." unique_id=106672043]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1135819491]
-visible = false
 rotation = -0.071558505
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_tipki")
