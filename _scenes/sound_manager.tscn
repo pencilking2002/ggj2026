@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://djl0b7guu26s8" path="res://_soundeffects/geiger_slow.ogg" id="4_7wto1"]
 [ext_resource type="AudioStream" uid="uid://ccypsymwvht2h" path="res://_soundeffects/_music/WormTrance_menu.ogg" id="4_msy1a"]
 [ext_resource type="AudioStream" uid="uid://cl20lg0hlamut" path="res://_soundeffects/wormscream.ogg" id="4_yudm7"]
+[ext_resource type="AudioStream" uid="uid://cnw2jcv0r2but" path="res://_soundeffects/dig.ogg" id="13_iiysu"]
 
 [node name="SoundManager" type="Control" unique_id=181729252]
 layout_mode = 3
@@ -63,3 +64,6 @@ stream = ExtResource("3_1ohty")
 
 [node name="Maskbreathing" type="AudioStreamPlayer" parent="." unique_id=67672922]
 stream = ExtResource("2_1ohty")
+
+[node name="Dig" type="AudioStreamPlayer" parent="." unique_id=1521104133]
+stream = ExtResource("13_iiysu")
