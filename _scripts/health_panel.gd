@@ -40,6 +40,7 @@ func on_stop_health_change() -> void:
 		health_label.add_theme_font_size_override("font_size", 30)
 		health_label.add_theme_color_override("font_color", default_color)
 		is_health_being_updated = false
+		
+		# Tween the needle
 		var tween : Tween = create_tween()
 		tween.tween_property(needle, "rotation_degrees", -90, 0.1)
-		# needle.rotation_degrees = -90

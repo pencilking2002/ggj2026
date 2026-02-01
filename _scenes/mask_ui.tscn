@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cawj207a2qagq"]
+
+[ext_resource type="Script" uid="uid://bjhetqwo7pqjk" path="res://_scripts/mask_canvas_layer.gd" id="1_fhvxk"]
+[ext_resource type="Shader" uid="uid://beily781xjedx" path="res://_shaders/Mask.gdshader" id="2_r5egs"]
+[ext_resource type="Texture2D" uid="uid://gi73rrx7jcy8" path="res://_textures/ui/meter.png" id="3_0bwvp"]
+[ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="4_8562u"]
+[ext_resource type="Script" uid="uid://bltfbycy87ku5" path="res://_scripts/health_panel.gd" id="5_7xgbr"]
+[ext_resource type="Texture2D" uid="uid://cgwsnl3suubo5" path="res://_textures/ui/bar1.png" id="6_anm17"]
+[ext_resource type="Texture2D" uid="uid://dpyk8t47cu8su" path="res://_textures/ui/bar2.png" id="7_hbxho"]
+[ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="8_c3t58"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgh2o"]
+shader = ExtResource("2_r5egs")
+shader_parameter/mask_color = Vector4(0, 0.015, 0.01, 1)
+shader_parameter/offset = Vector2(0.21, 0.08)
+shader_parameter/eye_radius = 0.12
+shader_parameter/eye_falloff = 0.065
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eb6dy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trceg"]
+texture = ExtResource("3_0bwvp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8y0u"]
+texture = ExtResource("4_8562u")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ae1l"]
+
+[node name="MaskCanvasLayer" type="CanvasLayer" unique_id=597918302 node_paths=PackedStringArray("color_rect")]
+script = ExtResource("1_fhvxk")
+color_rect = NodePath("ColorRect")
+eye_radius_reduce_rate = 0.1
+eye_falloff_reduce_rate = 0.1
+fade_in_eye_radius_duration = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1791971934]
+material = SubResource("ShaderMaterial_rgh2o")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -172.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0.58035105, 0.33670077, 1)
+
+[node name="gieger_counter" type="Control" parent="." unique_id=347665452]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 760.0
+offset_top = 347.0
+offset_right = 850.0
+offset_bottom = 387.0
+
+[node name="Meter" type="Panel" parent="gieger_counter" unique_id=73200438]
+modulate = Color(0.0627451, 0.7411765, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_eb6dy")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -20.0
+offset_right = 155.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_trceg")
+
+[node name="Needle" type="Panel" parent="gieger_counter" unique_id=1578147454]
+modulate = Color(0.0627451, 0.7411765, 0, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_eb6dy")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.767
+anchor_top = 1.7210001
+anchor_right = 0.767
+anchor_bottom = 1.7210001
+offset_left = -69.03
+offset_top = -68.840004
+offset_right = 130.97
+offset_bottom = 131.16
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.1972222
+pivot_offset = Vector2(137, 138)
+theme_override_styles/panel = SubResource("StyleBoxTexture_a8y0u")
+
+[node name="health_panel" type="Panel" parent="." unique_id=664056447 node_paths=PackedStringArray("health_bar", "needle", "health_label")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -52.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ae1l")
+script = ExtResource("5_7xgbr")
+health_bar = NodePath("TextureProgressBar")
+needle = NodePath("../gieger_counter/Needle")
+default_color = Color(1, 1, 1, 1)
+hurt_color = Color(1, 0.45490196, 0.5019608, 1)
+heal_color = Color(0.31402436, 0.60862523, 0.047273904, 1)
+health_label = NodePath("TextureProgressBar/health_num")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="health_panel" unique_id=496298775]
+texture_filter = 1
+layout_mode = 0
+offset_left = -835.0
+offset_top = -678.0
+offset_right = 189.0
+offset_bottom = 346.0
+scale = Vector2(0.75, 0.75)
+value = 100.0
+texture_over = ExtResource("6_anm17")
+texture_progress = ExtResource("7_hbxho")
+tint_over = Color(0.0627451, 0.7411765, 0, 1)
+tint_progress = Color(0.0627451, 0.7411765, 0, 1)
+
+[node name="health_num" type="Label" parent="health_panel/TextureProgressBar" unique_id=547973852]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.666668
+offset_top = 378.6667
+offset_right = 68.66667
+offset_bottom = 409.6667
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_c3t58")
+theme_override_font_sizes/font_size = 30
+text = "00"
