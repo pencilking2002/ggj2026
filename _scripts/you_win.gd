@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+func _ready():
+	SoundManager.stop_level_music()
+	SoundManager.play_win_music()
+	
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed:
@@ -10,6 +14,6 @@ func _input(event):
 			
 func start_game() -> void:
 	SoundManager.play_sound_geiger_single()
-	SoundManager.stop_menu_music()
+	SoundManager.stop_win_music()
 	var scene_path : String = GameManager.load_level(0)
 	print ("Level to load: ", scene_path)

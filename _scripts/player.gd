@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 		handle_confirm()
 	
 func _process(_delta: float):
+	health_controller.continously_reduce_health()
+	
 	if is_looking_at_toxic_item():
 		health_controller.decrement_health()
 	else:

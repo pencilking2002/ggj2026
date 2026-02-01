@@ -2,6 +2,7 @@ extends Node2D
 class_name HealthController
 
 @export var hurt_speed : float = 4.0
+@export var reduce_health_speed : float = 4.0
 @export var max_health : float = 500.0
 var health : float
 var delta_time : float
@@ -21,6 +22,15 @@ func decrement_health():
 	# Play gieger click every time 1.0 health is removed
 	if fmod(health, 1.0) < 0.01:
 		SoundManager.play_sound_geiger_single(0.2)	
+	
+	if health == 0.0:
+		do_gameover()
+
+func continously_reduce_health():
+	var prev_health : float = health
+	health -= get_process_delta_time() * reduce_health_speed
+	health = clamp(health,0, max_health)
+	SignalController.on_health_changed.emit(prev_health, health)
 	
 	if health == 0.0:
 		do_gameover()
