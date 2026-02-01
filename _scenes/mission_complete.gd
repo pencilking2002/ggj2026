@@ -32,13 +32,14 @@ func _input(event):
 
 func start_level() -> void:
 	SoundManager.play_sound_geiger_single()
-	if level == 1 : 
-		get_tree().change_scene_to_file("res://_scenes/main.tscn")
-	if level == 2 : 
-		get_tree().change_scene_to_file("res://_scenes/main.tscn")
-	if level == 3 : 
-		get_tree().change_scene_to_file("res://_scenes/main.tscn")
-	if level == 4 : 
-		get_tree().change_scene_to_file("res://_scenes/main.tscn")
-	if level == 5 : 
-		get_tree().change_scene_to_file("res://_scenes/main.tscn")
+	GameManager.load_next_level()
+#	if level == 1 : 
+#		get_tree().change_scene_to_file("res://_scenes/main.tscn")
+#	if level == 2 : 
+#		get_tree().change_scene_to_file("res://_scenes/main.tscn")
+#	if level == 3 : 
+#		get_tree().change_scene_to_file("res://_scenes/main.tscn")
+#	if level == 4 : 
+#		get_tree().change_scene_to_file("res://_scenes/main.tscn")
+#	if level == 5 : 
+#		get_tree().change_scene_to_file("res://_scenes/main.tscn")

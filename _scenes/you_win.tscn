@@ -1,19 +1,23 @@
-[gd_scene format=3 uid="uid://cek8licx6qorw"]
+[gd_scene format=3 uid="uid://c8oef3tyq13y1"]
 
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="1_bioj5"]
+[ext_resource type="Script" uid="uid://c5xrt4ry8tecx" path="res://_scripts/you_win.gd" id="1_u6ft8"]
 [ext_resource type="Texture2D" uid="uid://ylgc1ynonr2c" path="res://_textures/worm/MrWiggly.png" id="2_u6ft8"]
 
-[node name="YouWin" type="Control" unique_id=1822020075]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1116387725]
+script = ExtResource("1_u6ft8")
+
+[node name="YouWin" type="Control" parent="." unique_id=1822020075]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2074570739]
+[node name="ColorRect" type="ColorRect" parent="YouWin" unique_id=2074570739]
 layout_mode = 0
 offset_right = 962.0
 offset_bottom = 542.0
 color = Color(0.011764706, 0.03137255, 0.05490196, 1)
 
-[node name="Label" type="Label" parent="." unique_id=364054828]
+[node name="Label" type="Label" parent="YouWin" unique_id=364054828]
 layout_mode = 0
 offset_left = 83.0
 offset_top = 74.0
@@ -26,7 +30,7 @@ enough worms to survive!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayAgain" type="Label" parent="." unique_id=1660815401]
+[node name="PlayAgain" type="Label" parent="YouWin" unique_id=1660815401]
 layout_mode = 0
 offset_left = 342.0
 offset_top = 447.0
@@ -37,7 +41,7 @@ theme_override_fonts/font = ExtResource("1_bioj5")
 theme_override_font_sizes/font_size = 20
 text = "PRESS ANY KEY TO REPLAY"
 
-[node name="worm" type="Sprite2D" parent="." unique_id=171061589]
+[node name="worm" type="Sprite2D" parent="YouWin" unique_id=171061589]
 position = Vector2(474, 312)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_u6ft8")
