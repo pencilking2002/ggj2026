@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bft834wt12byd" path="res://_textures/env/dirt.png" id="1_wbhud"]
 [ext_resource type="PackedScene" uid="uid://cawj207a2qagq" path="res://_scenes/mask_ui.tscn" id="2_s3c6u"]
 [ext_resource type="PackedScene" uid="uid://d3818ktc5vdxh" path="res://_scenes/Player.tscn" id="3_0p8jt"]
-[ext_resource type="Texture2D" uid="uid://cfssy4dqqdlkn" path="res://_textures/env/slimeshadow.png" id="4_s3c6u"]
 [ext_resource type="PackedScene" uid="uid://5co13qikxubv" path="res://_scenes/aid_pickup.tscn" id="4_vu4ki"]
 [ext_resource type="Texture2D" uid="uid://cw5aaso40p04" path="res://_textures/env/Grass01.png" id="6_jd0qt"]
 [ext_resource type="Texture2D" uid="uid://dpeun661nn62m" path="res://_textures/env/Grass02.png" id="7_npowm"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cujsxmcfwdcyj" path="res://_textures/env/Grass05.png" id="10_eg7ku"]
 [ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="11_wi8tq"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="12_0dmuv"]
+[ext_resource type="PackedScene" path="res://_scenes/radiated_slime.tscn" id="13_vu4ki"]
 [ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="14_0p8jt"]
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="14_esiwo"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="15_vu4ki"]
@@ -149,10 +149,9 @@ position = Vector2(760, -216.20868)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_0p8jt")
 
-[node name="Slimeshadow" type="Sprite2D" parent="Objects" unique_id=2020017641]
-position = Vector2(896.0001, -248.10434)
-scale = Vector2(0.4131712, 0.29667118)
-texture = ExtResource("4_s3c6u")
+[node name="RadiatedSlime" parent="Objects" unique_id=1794315449 instance=ExtResource("13_vu4ki")]
+position = Vector2(896, -248)
+scale = Vector2(0.45552182, 0.2955206)
 
 [node name="RadiatedBarrel5" parent="Objects" unique_id=500442401 instance=ExtResource("15_vu4ki")]
 position = Vector2(-552, -36.208694)

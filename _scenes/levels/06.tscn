@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="12_a01qo"]
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="13_gtt8s"]
 [ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="14_cil4c"]
+[ext_resource type="PackedScene" path="res://_scenes/radiated_slime.tscn" id="14_goy8u"]
 [ext_resource type="PackedScene" uid="uid://cjdtqfch10g0r" path="res://_scenes/radiated_barrel.tscn" id="15_x2pv4"]
 [ext_resource type="PackedScene" uid="uid://ba0sn1c0nqv61" path="res://_scenes/worm.tscn" id="16_7wyml"]
 [ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="17_ov6jr"]
@@ -101,7 +102,7 @@ scale = Vector2(0.24999999, 0.09504898)
 texture = ExtResource("4_csgyx")
 
 [node name="Slimeshadow3" type="Sprite2D" parent="." unique_id=357603927]
-position = Vector2(-64, 760)
+position = Vector2(1456, -688)
 scale = Vector2(0.265625, 0.07486364)
 texture = ExtResource("4_csgyx")
 
@@ -122,7 +123,7 @@ scale = Vector2(0.12681872, 0.12681872)
 texture = ExtResource("7_hav1d")
 
 [node name="Grass03" type="Sprite2D" parent="Objects" unique_id=1371257646]
-position = Vector2(-368.00003, 840)
+position = Vector2(1167.9999, -655.9999)
 scale = Vector2(0.3125, 0.23234123)
 texture = ExtResource("8_5116k")
 
@@ -148,7 +149,7 @@ scale = Vector2(0.12681872, 0.12681872)
 texture = ExtResource("11_y8rcj")
 
 [node name="Grass07" type="Sprite2D" parent="Objects" unique_id=1098994180]
-position = Vector2(46.931183, 299.3733)
+position = Vector2(48, 304)
 scale = Vector2(0.12681872, 0.12681872)
 texture = ExtResource("12_a01qo")
 
@@ -156,6 +157,18 @@ texture = ExtResource("12_a01qo")
 position = Vector2(768.00006, 520)
 scale = Vector2(0.4214358, 0.4214358)
 texture = ExtResource("13_gtt8s")
+
+[node name="RadiatedSlime" parent="Objects" unique_id=1794315449 instance=ExtResource("14_goy8u")]
+position = Vector2(-112, 928)
+scale = Vector2(0.3977603, 0.19463532)
+
+[node name="RadiatedSlime2" parent="Objects" unique_id=1190301053 instance=ExtResource("14_goy8u")]
+position = Vector2(-608, 756)
+flip_h = true
+
+[node name="RadiatedSlime3" parent="Objects" unique_id=1423382413 instance=ExtResource("14_goy8u")]
+position = Vector2(-457.82657, 843.6733)
+scale = Vector2(0.14419277, 0.12368499)
 
 [node name="Skull" type="Sprite2D" parent="Objects" unique_id=873953083]
 position = Vector2(-200, -352)
@@ -167,7 +180,7 @@ position = Vector2(-112, -504.00003)
 scale = Vector2(0.265625, 0.07486364)
 texture = ExtResource("4_csgyx")
 
-[node name="RadiatedBarrel2" parent="Objects" unique_id=1794315449 instance=ExtResource("15_x2pv4")]
+[node name="RadiatedBarrel2" parent="Objects" unique_id=359285389 instance=ExtResource("15_x2pv4")]
 position = Vector2(-312.00003, -424)
 flip_h = true
 
@@ -182,8 +195,8 @@ scale = Vector2(0.47588536, 0.47588536)
 flip_h = true
 
 [node name="RadiatedBarrel5" parent="Objects" unique_id=500442401 instance=ExtResource("15_x2pv4")]
-position = Vector2(-487.99997, 456.00003)
-scale = Vector2(0.47588536, 0.47588536)
+position = Vector2(1047.9999, -952.69324)
+scale = Vector2(0.390625, 0.390625)
 centered = false
 
 [node name="AidPickup2" parent="Objects" unique_id=1619835555 instance=ExtResource("5_8vvxl")]
