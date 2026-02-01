@@ -174,6 +174,6 @@ position = Vector2(-458, 26)
 scale = Vector2(0.4992629, 0.4992629)
 texture = ExtResource("12_smp5j")
 
-[node name="Worm" parent="." unique_id=952066793 instance=ExtResource("11_a2h6g")]
+[node name="Worm" parent="Objects" unique_id=952066793 instance=ExtResource("11_a2h6g")]
 position = Vector2(-190, 587)
 is_idle_state_only = true

@@ -40,6 +40,8 @@ func load_next_level() -> void:
 	load_level(curr_level_index)
 	
 func win() -> void:
+	await get_tree().create_timer(1.0).timeout
+	
 	var num_worms : int = get_num_worms_in_level()
 	print ("Check win. num worms: ", num_worms)
 	

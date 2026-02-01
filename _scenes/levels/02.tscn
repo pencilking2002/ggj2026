@@ -166,7 +166,7 @@ position = Vector2(331, -518)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_xqieb")
 
-[node name="Worm" parent="." unique_id=952066793 instance=ExtResource("11_dsdj0")]
+[node name="Worm" parent="Objects" unique_id=952066793 instance=ExtResource("11_dsdj0")]
 position = Vector2(-136, 106)
 
 [node name="SpawnPointController" type="Area2D" parent="." unique_id=1381015914 node_paths=PackedStringArray("circle") groups=["spawn_area"]]

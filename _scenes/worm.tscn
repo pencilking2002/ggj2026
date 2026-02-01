@@ -92,7 +92,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"capture",
-"speed": 10.0
+"speed": 30.0
 }, {
 "frames": [],
 "loop": true,
@@ -252,4 +252,6 @@ material = SubResource("ShaderMaterial_jgcky")
 position = Vector2(6, -60.296883)
 scale = Vector2(0.2734375, 0.2734375)
 sprite_frames = SubResource("SpriteFrames_60o28")
-animation = &"youdied"
+animation = &"capture"
+frame = 3
+frame_progress = 0.3868932

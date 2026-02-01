@@ -262,15 +262,13 @@ position = Vector2(603.00006, 882)
 scale = Vector2(0.42515483, 0.37714717)
 texture = ExtResource("7_sy1gu")
 
-[node name="Worms" type="Node" parent="." unique_id=819486614]
-
-[node name="Worm" parent="Worms" unique_id=952066793 instance=ExtResource("11_46kh1")]
+[node name="Worm" parent="Objects" unique_id=952066793 instance=ExtResource("11_46kh1")]
 position = Vector2(-519, 334)
 
-[node name="Worm2" parent="Worms" unique_id=1523078397 instance=ExtResource("11_46kh1")]
+[node name="Worm2" parent="Objects" unique_id=1523078397 instance=ExtResource("11_46kh1")]
 position = Vector2(340, 638)
 
-[node name="Worm3" parent="Worms" unique_id=848239159 instance=ExtResource("11_46kh1")]
+[node name="Worm3" parent="Objects" unique_id=848239159 instance=ExtResource("11_46kh1")]
 position = Vector2(527, -103)
 
 [node name="SpawnPointController" type="Area2D" parent="." unique_id=1381015914 node_paths=PackedStringArray("circle") groups=["spawn_area"]]
