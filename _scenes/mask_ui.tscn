@@ -26,11 +26,12 @@ texture = ExtResource("4_8562u")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ae1l"]
 
-[node name="MaskCanvasLayer" type="CanvasLayer" unique_id=597918302 node_paths=PackedStringArray("color_rect", "tutorial_text", "level_text")]
+[node name="MaskCanvasLayer" type="CanvasLayer" unique_id=597918302 node_paths=PackedStringArray("color_rect", "tutorial_text", "level_text", "num_worms_text")]
 script = ExtResource("1_fhvxk")
 color_rect = NodePath("ColorRect")
 tutorial_text = NodePath("TutorialLabel")
 level_text = NodePath("LevelLabel")
+num_worms_text = NodePath("NumWormsLabel")
 eye_radius_reduce_rate = 0.1
 eye_falloff_reduce_rate = 0.1
 fade_in_eye_radius_duration = 2.0
@@ -159,13 +160,33 @@ vertical_alignment = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 561.0
-offset_top = -109.0
-offset_right = 774.0
-offset_bottom = -79.0
+offset_left = 682.0
+offset_top = -133.0
+offset_right = 773.0
+offset_bottom = -103.0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.3882353, 1, 0.25882354, 1)
+theme_override_fonts/font = ExtResource("8_c3t58")
+text = "LEVEL 00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NumWormsLabel" type="Label" parent="." unique_id=365956313]
+modulate = Color(0.2901961, 1, 0.41568628, 1)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -419.0
+offset_top = -107.0
+offset_right = -186.0
+offset_bottom = -77.0
+grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("8_c3t58")
-text = "LEVEL 00"
+text = "0 OF 0 WORMS FOUND"
 horizontal_alignment = 2
 vertical_alignment = 1

@@ -3,6 +3,7 @@ extends Node2D
 signal on_item_spotted
 signal on_item_exited
 signal on_health_changed
+
 signal on_stop_health_change
 signal on_game_over
 signal on_win_level
@@ -10,3 +11,4 @@ signal on_check_win_condition
 signal on_player_first_move
 signal on_pickup_toxic_item
 signal on_pickup_health_item
+signal on_pickup_worm

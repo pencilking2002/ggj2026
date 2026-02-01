@@ -4,6 +4,7 @@ class_name MaskCanvasLayer
 @export var color_rect: ColorRect
 @export var tutorial_text : Label
 @export var level_text : Label
+@export var num_worms_text : Label 
 @export var is_mask_enabled : bool = true
 @export var eye_radius_reduce_rate := 8.0
 @export var eye_falloff_reduce_rate := 2.0
@@ -14,10 +15,22 @@ static var eye_radius_str: String = "eye_radius"
 static var eye_falloff_str: String = "eye_falloff"
 
 var color_rect_mat: Material
+var total_worms : int
+var worms_collected : int
 
 func _ready() -> void:
+	worms_collected = 0
+	var worms := get_tree().get_nodes_in_group("worms")
+	total_worms = worms.size()
+	update_num_worms_text(0, total_worms)
 	level_text.text = str("LEVEL 0", GameManager.curr_level_index+1)
 	SignalController.on_player_first_move.connect(player_first_move)
+	SignalController.on_pickup_worm.connect(pickup_worm)
+	SignalController.on_pickup_health_item.connect(pickup_health_item)
+	
+	if GameManager.curr_level_index == 3:
+		num_worms_text.text = "0 OF 1 HEALING KITS FOUND"
+		
 	#SoundManager.play_level_music()
 	if not is_mask_enabled:
 		visible = false
@@ -36,6 +49,14 @@ func _ready() -> void:
 		if data:
 			tutorial_text.text = data.data[0]
 
+func pickup_health_item() -> void:
+	if GameManager.curr_level_index == 3:
+		num_worms_text.text = "1 OF 1 HEALING KITS FOUND"
+		
+func pickup_worm() -> void:
+	worms_collected += 1
+	update_num_worms_text(worms_collected, total_worms)
+	
 func player_first_move() -> void:
 #	await get_tree().create_timer(5.0).timeout
 #	var tween : Tween = create_tween()
@@ -55,7 +76,10 @@ func fade_in_eye_radius(duration: float) -> void:
 
 func set_eye_radius(value: float) -> void:
 	color_rect_mat.set_shader_parameter(eye_radius_str, value)
-	
+
+func update_num_worms_text(num_left : int, total_worms : int) -> void:
+	num_worms_text.text = str(num_left) + " OF " + str(total_worms) + " WORMS FOUND"
+		
 # Continually reduces the eye radius
 #func reduce_eye_radius(delta: float) -> void:
 #	var curr_radius: float = color_rect_mat.get_shader_parameter(eye_radius_str)
