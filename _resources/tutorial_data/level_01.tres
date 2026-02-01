@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_7d6fh")
-data = Array[String](["Must find Worms. Use WASD to move around."])
+data = Array[String](["Must CLICK worms. Use WASD to move around."])
 metadata/_custom_type_script = "uid://d0c60uywrsn55"
