@@ -15,14 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://cujsxmcfwdcyj" path="res://_textures/env/Grass05.png" id="6_wot5j"]
 [ext_resource type="Texture2D" uid="uid://gi73rrx7jcy8" path="res://_textures/ui/meter.png" id="7_choun"]
 [ext_resource type="Texture2D" uid="uid://dkwmn7ji12p0j" path="res://_textures/env/Grass06.png" id="7_lfnwg"]
-[ext_resource type="Texture2D" uid="uid://be70q7orm6rgf" path="res://_textures/ui/circle.png" id="8_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
 [ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ncve032or807" path="res://_textures/env/skelehand.png" id="9_sensu"]
-[ext_resource type="Texture2D" uid="uid://ylgc1ynonr2c" path="res://_textures/worm/MrWiggly.png" id="10_55hjd"]
 [ext_resource type="Texture2D" uid="uid://cfssy4dqqdlkn" path="res://_textures/env/slimeshadow.png" id="10_wot5j"]
 [ext_resource type="Script" uid="uid://bltfbycy87ku5" path="res://_scripts/health_panel.gd" id="19_0ae1l"]
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="19_sensu"]
+[ext_resource type="Texture2D" uid="uid://cgwsnl3suubo5" path="res://_textures/ui/bar1.png" id="20_55hjd"]
+[ext_resource type="Texture2D" uid="uid://dpyk8t47cu8su" path="res://_textures/ui/bar2.png" id="21_potqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -41,11 +41,6 @@ shader_parameter/eye_falloff = 0.065
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trceg"]
 texture = ExtResource("7_choun")
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_trceg"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkv2x"]
-texture = ExtResource("8_eb6dy")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8y0u"]
 texture = ExtResource("8_ya4ey")
@@ -148,11 +143,6 @@ position = Vector2(-234, -122)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_sensu")
 
-[node name="MrWiggly" type="Sprite2D" parent="Ground" unique_id=1283801138]
-position = Vector2(-363, 252)
-scale = Vector2(0.39453125, 0.39453125)
-texture = ExtResource("10_55hjd")
-
 [node name="Slimeshadow" type="Sprite2D" parent="." unique_id=1268009067]
 position = Vector2(-665, -326.00003)
 scale = Vector2(0.265625, 0.07486364)
@@ -227,12 +217,14 @@ color = Color(0, 0.58035105, 0.33670077, 1)
 [node name="gieger_counter" type="Control" parent="MaskCanvasLayer" unique_id=21558041]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 437.0
-offset_top = 425.0
-offset_right = 527.0
-offset_bottom = 465.0
+offset_left = 760.0
+offset_top = 347.0
+offset_right = 850.0
+offset_bottom = 387.0
 
 [node name="Meter" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=556639486]
+modulate = Color(0.0627451, 0.7411765, 0, 1)
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_eb6dy")
 layout_mode = 1
 anchors_preset = 8
@@ -240,48 +232,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -41.5
-offset_top = -15.0
-offset_right = 41.0
-offset_bottom = 22.0
+offset_left = -45.0
+offset_top = -20.0
+offset_right = 155.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_trceg")
 
-[node name="Needle" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=2079772022]
-modulate = Color(0.13072005, 0.26380324, 0.2638458, 1)
-material = SubResource("CanvasItemMaterial_trceg")
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.51111114
-anchor_top = 0.975
-anchor_right = 0.51111114
-anchor_bottom = 0.975
-offset_left = -9.000004
-offset_top = 2.0
-offset_right = 6.0007973
-offset_bottom = 17.19553
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(7.621704, 6.9499817)
-theme_override_styles/panel = SubResource("StyleBoxTexture_jkv2x")
-
-[node name="circle" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=1628898433]
-modulate = Color(0.22352941, 0.41568628, 0.41568628, 1)
+[node name="Needle" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=1628898433]
+modulate = Color(0.0627451, 0.7411765, 0, 1)
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_eb6dy")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.51111114
-anchor_top = 0.975
-anchor_right = 0.51111114
-anchor_bottom = 0.975
-offset_left = -6.0
-offset_top = -21.0
-offset_right = 3.5
-offset_bottom = 14.0
+anchor_left = 0.767
+anchor_top = 1.7210001
+anchor_right = 0.767
+anchor_bottom = 1.7210001
+offset_left = -69.03
+offset_top = -68.840004
+offset_right = 130.97
+offset_bottom = 131.16
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(5, 30)
+pivot_offset = Vector2(137, 138)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a8y0u")
 
 [node name="health_panel" type="Panel" parent="MaskCanvasLayer" unique_id=1094027205 node_paths=PackedStringArray("health_label")]
@@ -301,6 +276,19 @@ hurt_color = Color(1, 0.45490196, 0.5019608, 1)
 heal_color = Color(0.31402436, 0.60862523, 0.047273904, 1)
 health_label = NodePath("health_num")
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MaskCanvasLayer/health_panel" unique_id=1174784680]
+texture_filter = 1
+layout_mode = 0
+offset_left = -835.0
+offset_top = -678.0
+offset_right = 189.0
+offset_bottom = 346.0
+scale = Vector2(0.75, 0.75)
+texture_over = ExtResource("20_55hjd")
+texture_progress = ExtResource("21_potqn")
+tint_over = Color(0.0627451, 0.7411765, 0, 1)
+tint_progress = Color(0.0627451, 0.7411765, 0, 1)
+
 [node name="health_num" type="Label" parent="MaskCanvasLayer/health_panel" unique_id=954893713]
 layout_mode = 1
 anchors_preset = 8
@@ -308,10 +296,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -15.5
-offset_right = 21.0
-offset_bottom = 15.5
+offset_left = -877.0
+offset_top = -75.0
+offset_right = -835.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
