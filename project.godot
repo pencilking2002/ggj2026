@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 SoundManager="*res://_scenes/sound_manager.tscn"
 SignalController="*uid://bd6x78i1148jm"
+GameManager="*uid://bldqitl1jxmyx"
 
 [display]
 
