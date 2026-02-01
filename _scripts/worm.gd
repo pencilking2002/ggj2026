@@ -15,6 +15,7 @@ enum WormStateEnum {
 	DIVING,
 	EMERGING,
 	SUBMERGED,
+	CAUGHT
 }
 
 @export var worm_state: WormStateEnum = WormStateEnum.IDLE
@@ -24,8 +25,11 @@ func _ready():
 	animator.play("idle")
 	idle_duration = worm_settings.idle_duration + randf_range(0, worm_settings.idle_duration_variance)
 	
-func set_state(input_state: WormStateEnum):
+func set_state(input_state: WormStateEnum) -> void:
 	worm_state = input_state
+
+func get_state() -> WormStateEnum:
+	return worm_state
 	
 func _process(delta: float):
 	if is_idle_state_only:
@@ -36,7 +40,9 @@ func _process(delta: float):
 	
 # Manage the worm's looping behavir of emerging and submerging
 func update_worm_state() -> void:
-	if worm_state == WormStateEnum.SUBMERGED && time_elapsed > last_dive_time + worm_settings.submerged_duration:
+	if worm_state == WormStateEnum.CAUGHT:
+		return
+	elif worm_state == WormStateEnum.SUBMERGED && time_elapsed > last_dive_time + worm_settings.submerged_duration:
 		set_state(WormStateEnum.EMERGING)
 		last_emerge_time = time_elapsed
 		sprite.show()
@@ -70,6 +76,11 @@ func get_random_point() -> Vector2:
 		
 func can_be_collected() -> bool:
 	return worm_state == WormStateEnum.IDLE
+
+func collect():
+	set_state(WormStateEnum.CAUGHT)
+	SignalController.on_check_win_condition.emit()
+	super()
 	
 #func _draw():
 #	var start_point : Vector2 = position
