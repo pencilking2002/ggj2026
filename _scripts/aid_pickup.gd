@@ -10,4 +10,5 @@ func can_be_collected() -> bool:
 func collect():
 	SoundManager.play_sound_pills()
 	SignalController.on_pickup_health_item.emit()
+	SignalController.on_check_win_condition.emit()
 	super()
