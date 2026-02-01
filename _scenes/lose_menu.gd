@@ -16,4 +16,4 @@ func _input(event):
 func start_game() -> void:
 	SoundManager.play_sound_geiger_single()
 	SoundManager.stop_gameover_music()
-	get_tree().change_scene_to_file("res://_scenes/main.tscn")
+	GameManager.load_last_level()
