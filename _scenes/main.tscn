@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
 [ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ncve032or807" path="res://_textures/env/skelehand.png" id="9_sensu"]
+[ext_resource type="Texture2D" uid="uid://cfssy4dqqdlkn" path="res://_textures/env/slimeshadow.png" id="10_wot5j"]
+[ext_resource type="Script" uid="uid://bltfbycy87ku5" path="res://_scripts/health_panel.gd" id="19_0ae1l"]
+[ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="19_sensu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
 size = Vector2(633.9111, 4413)
@@ -142,6 +145,16 @@ position = Vector2(-234, -122)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_sensu")
 
+[node name="Slimeshadow" type="Sprite2D" parent="." unique_id=1268009067]
+position = Vector2(-665, -326.00003)
+scale = Vector2(0.265625, 0.07486364)
+texture = ExtResource("10_wot5j")
+
+[node name="Slimeshadow2" type="Sprite2D" parent="." unique_id=2081507731]
+position = Vector2(-970, -274)
+scale = Vector2(0.24999999, 0.09504898)
+texture = ExtResource("10_wot5j")
+
 [node name="Objects" type="Node2D" parent="." unique_id=1379805591]
 y_sort_enabled = true
 
@@ -203,7 +216,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0, 0.58035105, 0.33670077, 1)
 
-[node name="UI" type="Control" parent="MaskCanvasLayer" unique_id=21558041]
+[node name="gieger_counter" type="Control" parent="MaskCanvasLayer" unique_id=21558041]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 437.0
@@ -211,7 +224,7 @@ offset_top = 425.0
 offset_right = 527.0
 offset_bottom = 465.0
 
-[node name="Meter" type="Panel" parent="MaskCanvasLayer/UI" unique_id=556639486]
+[node name="Meter" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=556639486]
 material = SubResource("CanvasItemMaterial_eb6dy")
 layout_mode = 1
 anchors_preset = 8
@@ -227,7 +240,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_trceg")
 
-[node name="Needle" type="Panel" parent="MaskCanvasLayer/UI" unique_id=2079772022]
+[node name="Needle" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=2079772022]
 modulate = Color(0.13072005, 0.26380324, 0.2638458, 1)
 material = SubResource("CanvasItemMaterial_trceg")
 layout_mode = 1
@@ -245,7 +258,7 @@ grow_vertical = 0
 pivot_offset = Vector2(7.621704, 6.9499817)
 theme_override_styles/panel = SubResource("StyleBoxTexture_jkv2x")
 
-[node name="circle" type="Panel" parent="MaskCanvasLayer/UI" unique_id=1628898433]
+[node name="circle" type="Panel" parent="MaskCanvasLayer/gieger_counter" unique_id=1628898433]
 modulate = Color(0.22352941, 0.41568628, 0.41568628, 1)
 material = SubResource("CanvasItemMaterial_eb6dy")
 layout_mode = 1
@@ -262,6 +275,37 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(5, 30)
 theme_override_styles/panel = SubResource("StyleBoxTexture_a8y0u")
+
+[node name="health_panel" type="Panel" parent="MaskCanvasLayer" unique_id=1094027205 node_paths=PackedStringArray("health_label")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -52.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("19_0ae1l")
+health_label = NodePath("health_num")
+
+[node name="health_num" type="Label" parent="MaskCanvasLayer/health_panel" unique_id=954893713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -15.5
+offset_right = 21.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7666196, 0.76661956, 0.76661956, 1)
+theme_override_fonts/font = ExtResource("19_sensu")
+theme_override_font_sizes/font_size = 30
+text = "00"
 
 [node name="SpawnPointController" parent="." unique_id=498951010 instance=ExtResource("6_21xkr")]
 visible = false

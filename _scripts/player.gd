@@ -5,10 +5,12 @@ class_name Player
 @export var move_lerp_speed := 5.0
 @export var left_eye : EyeCollisionReporter
 @export var right_eye : EyeCollisionReporter
+@export var health_controller : HealthController
 
 var curr_items : Array[SpottableItem]
 
 func _ready() -> void:
+	# Connect to signals for spotting items
 	left_eye.on_item_spotted.connect(item_spotted)
 	right_eye.on_item_spotted.connect(item_spotted)
 	left_eye.on_item_exited.connect(item_exited)
@@ -27,12 +29,24 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("confirm"):
 		handle_confirm()
+	
+	if is_looking_at_toxic_item():
+		health_controller.decrement_health()
+	else:
+		health_controller.stop_health_change()
 
+# Handle user input for collecting items 
 func handle_confirm() -> void:
 	if has_items():
 		for n in curr_items:
 			if n.can_be_collected():
 				n.collect()
+
+func is_looking_at_toxic_item() -> bool:
+	for item in curr_items:
+		if item.is_toxic:
+			return true
+	return false
 	
 func has_items() -> bool:
 	return curr_items.size() > 0

@@ -29,7 +29,7 @@ func _ready() -> void:
 		SoundManager.play_sound_mask_with_ramp_up(breath_audio_fade_in_duration)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# reduce_eye_radius(delta)
 	pass
 

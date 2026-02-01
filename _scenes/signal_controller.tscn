@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bd6x78i1148jm"]
+
+[ext_resource type="Script" uid="uid://d8o3gkl2avmw" path="res://_scripts/signal_controller.gd" id="1_wkwll"]
+
+[node name="SignalController" type="Node2D" unique_id=1123637811]
+script = ExtResource("1_wkwll")

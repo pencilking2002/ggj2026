@@ -1,0 +1,6 @@
+extends Node2D
+
+signal on_health_changed
+signal on_health_increased
+signal on_health_decreased
+signal on_stop_health_change

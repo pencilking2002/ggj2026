@@ -1,7 +1,11 @@
 extends Node2D
 class_name SpottableItem
 
+
 @export var sprite : Sprite2D
+
+var is_toxic : bool
+
 var sprite_mat : ShaderMaterial
 static var blink_strength_str : StringName = &"blink_strength"
 
