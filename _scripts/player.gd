@@ -11,10 +11,8 @@ var curr_items : Array[SpottableItem]
 
 func _ready() -> void:
 	# Connect to signals for spotting items
-	left_eye.on_item_spotted.connect(item_spotted)
-	right_eye.on_item_spotted.connect(item_spotted)
-	left_eye.on_item_exited.connect(item_exited)
-	right_eye.on_item_exited.connect(item_exited)
+	SignalController.on_item_spotted.connect(item_spotted)
+	SignalController.on_item_exited.connect(item_exited)
 	
 func _physics_process(delta: float) -> void:
 	# Get movement direction from player input
@@ -31,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		handle_confirm()
 	
 	if is_looking_at_toxic_item():
-		health_controller.decrement_health()
+		health_controller.decrement_health(delta)
 	else:
 		health_controller.stop_health_change()
 

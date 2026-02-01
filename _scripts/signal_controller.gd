@@ -1,6 +1,7 @@
 extends Node2D
 
+signal on_item_spotted
+signal on_item_exited
 signal on_health_changed
-signal on_health_increased
-signal on_health_decreased
 signal on_stop_health_change
+signal on_game_over

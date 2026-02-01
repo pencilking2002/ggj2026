@@ -49,6 +49,8 @@ texture = ExtResource("8_eb6dy")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8y0u"]
 texture = ExtResource("8_ya4ey")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ae1l"]
+
 [node name="Root" type="Node2D" unique_id=1222739125]
 
 [node name="Ground" type="Node2D" parent="." unique_id=162500319]
@@ -286,7 +288,11 @@ offset_left = -106.0
 offset_top = -52.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0ae1l")
 script = ExtResource("19_0ae1l")
+default_color = Color(0.7647059, 0.7647059, 0.7647059, 1)
+hurt_color = Color(1, 0.45490196, 0.5019608, 1)
+heal_color = Color(0.31402436, 0.60862523, 0.047273904, 1)
 health_label = NodePath("health_num")
 
 [node name="health_num" type="Label" parent="MaskCanvasLayer/health_panel" unique_id=954893713]

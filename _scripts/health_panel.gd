@@ -1,5 +1,9 @@
 extends Panel
 
+@export var default_color : Color
+@export var hurt_color : Color
+@export var heal_color : Color
+
 @export var health_label : Label
 var is_health_being_updated : bool
 
@@ -10,17 +14,16 @@ func _ready():
 	# Subscribe to the on_stop_health_change signal in order to turn the color of the health text back to normal 
 	SignalController.on_stop_health_change.connect(on_stop_health_change)
 
-func on_health_changed(amount : int):
+func on_health_changed(prev_health : int, new_health : int) -> void:
 	is_health_being_updated = true
-	var prev_health : int = int(health_label.text)
-	health_label.text = str(amount)
+	health_label.text = str(int(new_health))
 	
-	if amount < prev_health:
-		health_label.add_theme_color_override("font_color", Color.RED)
-	elif amount > prev_health:
-		health_label.add_theme_color_override("font_color", Color.GREEN)
+	if prev_health > new_health:
+		health_label.add_theme_color_override("font_color", hurt_color)
+	elif prev_health < new_health:
+		health_label.add_theme_color_override("font_color", heal_color)
 
-func on_stop_health_change():
+func on_stop_health_change() -> void:
 	if is_health_being_updated:
-		health_label.add_theme_color_override("font_color", Color.GRAY)
+		health_label.add_theme_color_override("font_color", default_color)
 		is_health_being_updated = false

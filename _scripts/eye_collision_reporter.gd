@@ -1,9 +1,6 @@
 extends Area2D
 class_name EyeCollisionReporter
 
-signal on_item_spotted
-signal on_item_exited
-
 func _ready() -> void:
 	area_entered.connect(on_area_entered)
 	area_exited.connect(on_area_exited)
@@ -15,7 +12,7 @@ func on_area_entered(other: Area2D) -> void:
 	
 	var item := other.get_parent() as SpottableItem
 	# print("Item spotted: ", item.name)
-	on_item_spotted.emit(item)
+	SignalController.on_item_spotted.emit(item)
 
 func on_area_exited(other: Area2D) -> void:
 	if other.get_parent() is not SpottableItem:
@@ -23,4 +20,4 @@ func on_area_exited(other: Area2D) -> void:
 		return
 	
 	var item := other.get_parent() as SpottableItem
-	on_item_exited.emit(item)
+	SignalController.on_item_exited.emit(item)
