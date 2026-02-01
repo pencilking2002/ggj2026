@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://btjdfgdtc2jsh"]
 
+[ext_resource type="Script" uid="uid://bex2sbowkpgx7" path="res://_scenes/lose_menu.gd" id="1_8ml7p"]
 [ext_resource type="Texture2D" uid="uid://cdx6w320vwqse" path="res://_textures/menu/GasMask.png" id="1_jojrv"]
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="2_8ml7p"]
 
 [node name="LoseMenu" type="Control" unique_id=945732434]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_8ml7p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1650561764]
 layout_mode = 0

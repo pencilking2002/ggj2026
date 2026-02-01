@@ -24,7 +24,7 @@ func decrement_health():
 		do_gameover()
 		
 func do_gameover():
-	SoundManager.stop_menu_music()
+	SoundManager.stop_level_music()
 	get_tree().change_scene_to_file("res://_scenes/lose_menu.tscn")
 	
 #func increment_health():
