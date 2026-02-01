@@ -166,14 +166,14 @@ offset_right = 773.0
 offset_bottom = -103.0
 grow_vertical = 0
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.3882353, 1, 0.25882354, 1)
+theme_override_colors/font_color = Color(0.0627451, 0.7411765, 0, 1)
 theme_override_fonts/font = ExtResource("8_c3t58")
 text = "LEVEL 00"
 horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="NumWormsLabel" type="Label" parent="." unique_id=365956313]
-modulate = Color(0.2901961, 1, 0.41568628, 1)
+modulate = Color(0.0627451, 0.7411765, 0, 1)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
