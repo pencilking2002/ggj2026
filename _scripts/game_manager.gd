@@ -47,7 +47,7 @@ func win() -> void:
 	
 	if num_worms == 0:
 		print ("curr level index: ", curr_level_index, ". total levels: ", levels.scene_paths.size())
-		if curr_level_index + 1 >= levels.scene_paths.size() - 1:
+		if curr_level_index + 1 == levels.scene_paths.size():
 			show_win_scene()
 		else:
 			show_mission_complete()

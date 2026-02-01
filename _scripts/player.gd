@@ -33,6 +33,14 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("confirm"):
 		handle_confirm()
 	
+	if Input.is_action_just_pressed("go_to_next_level"):
+		var worms = get_tree().get_nodes_in_group("worms")
+		
+		for worm in worms:
+			worm.queue_free()
+		
+		SignalController.on_check_win_condition.emit()
+	
 func _process(_delta: float):
 	health_controller.continously_reduce_health()
 	
