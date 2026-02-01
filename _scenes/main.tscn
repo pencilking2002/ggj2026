@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
 [ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ncve032or807" path="res://_textures/env/skelehand.png" id="9_sensu"]
+[ext_resource type="Texture2D" uid="uid://ylgc1ynonr2c" path="res://_textures/worm/MrWiggly.png" id="10_55hjd"]
 [ext_resource type="Texture2D" uid="uid://cfssy4dqqdlkn" path="res://_textures/env/slimeshadow.png" id="10_wot5j"]
 [ext_resource type="Script" uid="uid://bltfbycy87ku5" path="res://_scripts/health_panel.gd" id="19_0ae1l"]
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="19_sensu"]
@@ -146,6 +147,11 @@ texture = ExtResource("8_wot5j")
 position = Vector2(-234, -122)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_sensu")
+
+[node name="MrWiggly" type="Sprite2D" parent="Ground" unique_id=1283801138]
+position = Vector2(-363, 252)
+scale = Vector2(0.39453125, 0.39453125)
+texture = ExtResource("10_55hjd")
 
 [node name="Slimeshadow" type="Sprite2D" parent="." unique_id=1268009067]
 position = Vector2(-665, -326.00003)
