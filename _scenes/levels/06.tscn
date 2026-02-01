@@ -159,15 +159,15 @@ scale = Vector2(0.4214358, 0.4214358)
 texture = ExtResource("13_gtt8s")
 
 [node name="RadiatedSlime" parent="Objects" unique_id=1794315449 instance=ExtResource("14_goy8u")]
-position = Vector2(-112, 928)
-scale = Vector2(0.3977603, 0.19463532)
+position = Vector2(-93.92604, 828.32666)
+scale = Vector2(0.464311, 0.25845048)
 
 [node name="RadiatedSlime2" parent="Objects" unique_id=1190301053 instance=ExtResource("14_goy8u")]
-position = Vector2(-608, 756)
+position = Vector2(-568, 668)
 flip_h = true
 
 [node name="RadiatedSlime3" parent="Objects" unique_id=1423382413 instance=ExtResource("14_goy8u")]
-position = Vector2(-457.82657, 843.6733)
+position = Vector2(-432.00003, 824)
 scale = Vector2(0.14419277, 0.12368499)
 
 [node name="Skull" type="Sprite2D" parent="Objects" unique_id=873953083]
