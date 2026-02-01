@@ -2,7 +2,118 @@
 
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="1_bioj5"]
 [ext_resource type="Script" uid="uid://c5xrt4ry8tecx" path="res://_scripts/you_win.gd" id="1_u6ft8"]
-[ext_resource type="Texture2D" uid="uid://ylgc1ynonr2c" path="res://_textures/worm/MrWiggly.png" id="2_u6ft8"]
+[ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="3_1i0if"]
+[ext_resource type="Texture2D" uid="uid://cpmqojcm4gfi1" path="res://_textures/worm/popup/final-1.png" id="4_bkt0w"]
+[ext_resource type="Texture2D" uid="uid://btx1ke5f5yxcm" path="res://_textures/worm/popup/final-2.png" id="5_684jl"]
+[ext_resource type="Texture2D" uid="uid://epliedwn4lvr" path="res://_textures/worm/popup/final-3.png" id="6_v7dbv"]
+[ext_resource type="Texture2D" uid="uid://ltoe4x05yvjq" path="res://_textures/worm/popup/final-4.png" id="7_rcbi4"]
+[ext_resource type="Texture2D" uid="uid://ct8s1oslmunep" path="res://_textures/worm/popup/final-5.png" id="8_66ume"]
+[ext_resource type="Texture2D" uid="uid://bckpkavgwxr0q" path="res://_textures/worm/popup/final-6.png" id="9_0fb88"]
+[ext_resource type="Texture2D" uid="uid://kvsxqob5pqx0" path="res://_textures/worm/popup/final-7.png" id="10_p5k1w"]
+[ext_resource type="Texture2D" uid="uid://bbv2tht5oko3u" path="res://_textures/worm/popup/final-8.png" id="11_q6jgg"]
+[ext_resource type="Texture2D" uid="uid://d37llt6sec02p" path="res://_textures/worm/popup/final-9.png" id="12_em363"]
+[ext_resource type="Texture2D" uid="uid://bh6vmuyu4gcnd" path="res://_textures/worm/popup/final-10.png" id="13_an0le"]
+[ext_resource type="Texture2D" uid="uid://bu1r3p4mcjet8" path="res://_textures/worm/popup/final-11.png" id="14_vn03c"]
+[ext_resource type="Texture2D" uid="uid://bgndohwqkcbyd" path="res://_textures/worm/idle/final-1.png" id="15_c0ggb"]
+[ext_resource type="Texture2D" uid="uid://bluqjl3mut80a" path="res://_textures/worm/idle/final-2.png" id="16_ko1t2"]
+[ext_resource type="Texture2D" uid="uid://c76vaw016upkq" path="res://_textures/worm/idle/final-3.png" id="17_hgat6"]
+[ext_resource type="Texture2D" uid="uid://bhanr338giyqu" path="res://_textures/worm/idle/final-4.png" id="18_bjham"]
+[ext_resource type="Texture2D" uid="uid://cg0ymr5iwnsjp" path="res://_textures/worm/idle/final-5.png" id="19_6lkxb"]
+[ext_resource type="Texture2D" uid="uid://blvenw38nwjam" path="res://_textures/worm/idle/final-6.png" id="20_vsx0a"]
+[ext_resource type="Texture2D" uid="uid://ce0raop7jlr7c" path="res://_textures/worm/idle/final-7.png" id="21_1qvdr"]
+[ext_resource type="Texture2D" uid="uid://cpkerxny447dh" path="res://_textures/worm/idle/final-8.png" id="22_vce1b"]
+[ext_resource type="Texture2D" uid="uid://csxfqgpsb6iln" path="res://_textures/worm/idle/final-9.png" id="23_u5djs"]
+[ext_resource type="Texture2D" uid="uid://b80a85n13rhya" path="res://_textures/worm/idle/final-10.png" id="24_akvvm"]
+[ext_resource type="Texture2D" uid="uid://b73itxs4yx533" path="res://_textures/worm/idle/final-11.png" id="25_co42u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivqxm"]
+shader = ExtResource("3_1i0if")
+shader_parameter/highlight_color = Color(0.35689738, 0.2579848, 0.088079296, 1)
+shader_parameter/blink_strength = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwldg"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bkt0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_684jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v7dbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rcbi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_66ume")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0fb88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p5k1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q6jgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_em363")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_an0le")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vn03c")
+}],
+"loop": false,
+"name": &"emerge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_c0ggb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ko1t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hgat6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_bjham")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6lkxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vsx0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1qvdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vce1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_u5djs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_akvvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_co42u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1116387725]
 script = ExtResource("1_u6ft8")
@@ -41,7 +152,11 @@ theme_override_fonts/font = ExtResource("1_bioj5")
 theme_override_font_sizes/font_size = 20
 text = "PRESS ANY KEY TO REPLAY"
 
-[node name="worm" type="Sprite2D" parent="YouWin" unique_id=171061589]
-position = Vector2(474, 312)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("2_u6ft8")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="YouWin" unique_id=1440937151]
+material = SubResource("ShaderMaterial_ivqxm")
+position = Vector2(484.00006, 316)
+scale = Vector2(0.52309567, 0.52309567)
+sprite_frames = SubResource("SpriteFrames_gwldg")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.34244806
