@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="12_b5txm"]
 [ext_resource type="PackedScene" uid="uid://cawj207a2qagq" path="res://_scenes/mask_ui.tscn" id="17_wot5j"]
 [ext_resource type="Script" uid="uid://diac0e4o1p8cj" path="res://_scripts/spawn_area.gd" id="20_wot5j"]
+[ext_resource type="PackedScene" uid="uid://den2au44x5te5" path="res://_scenes/radiated_slime.tscn" id="21_sensu"]
 [ext_resource type="PackedScene" uid="uid://bldqitl1jxmyx" path="res://_scenes/game_manager.tscn" id="27_b5txm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idj7w"]
@@ -206,3 +207,6 @@ circle = NodePath("SpawnArea")
 
 [node name="SpawnArea" type="CollisionShape2D" parent="SpawnPointController" unique_id=429953236]
 shape = SubResource("CircleShape2D_sensu")
+
+[node name="RadiatedSlime" parent="." unique_id=1225266393 instance=ExtResource("21_sensu")]
+position = Vector2(-260, 36.000004)
