@@ -6,6 +6,7 @@
 [node name="MissionComplete" type="CanvasLayer" unique_id=1254080203]
 script = ExtResource("1_2hwn0")
 level = 1
+fade_in_duration = 0.2
 
 [node name="Label" type="Label" parent="." unique_id=1642252059]
 offset_left = 208.0
@@ -32,4 +33,4 @@ text = "PRESS ANY KEY TO PROCEED TO NEXT AREA"
 z_index = -1
 offset_right = 960.0
 offset_bottom = 540.0
-color = Color(0, 0, 0, 0.12941177)
+color = Color(0, 0, 0, 0)

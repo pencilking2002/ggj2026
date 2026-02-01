@@ -3,7 +3,12 @@ extends CanvasLayer
 @export var level : int
 @export var fade_in_duration := 1.0
 
+func _ready() -> void:
+	fade_in()
 
+func fade_in():
+	var tween = get_tree().create_tween()
+	tween.tween_property($ColorRect, 'modulate:a', 255, fade_in_duration).set_trans(Tween.TRANS_SINE)
 
 func _input(event):
 	if event is InputEventKey:
@@ -12,6 +17,8 @@ func _input(event):
 	elif event is InputEventMouseButton:
 		if event.pressed:
 			start_level()
+
+
 
 func start_level() -> void:
 	SoundManager.play_sound_geiger_single()
