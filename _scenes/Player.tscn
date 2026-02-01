@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dqd5yl78kq36d" path="res://_scripts/health_controller.gd" id="3_1mdib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bo1nx"]
-radius = 650.0
+radius = 538.0037
 
 [node name="Player" type="CharacterBody2D" unique_id=173045213 node_paths=PackedStringArray("left_eye", "right_eye", "health_controller") groups=["player"]]
 script = ExtResource("1_rpqav")

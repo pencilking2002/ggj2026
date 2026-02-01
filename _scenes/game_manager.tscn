@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bldqitl1jxmyx"]
 
 [ext_resource type="Script" uid="uid://yomcwst8imwm" path="res://_scripts/game_manager.gd" id="1_wsjqe"]
+[ext_resource type="Script" uid="uid://dl171wpavuwef" path="res://_resources/levels.gd" id="2_1uqvo"]
+
+[sub_resource type="Resource" id="Resource_icdal"]
+script = ExtResource("2_1uqvo")
+metadata/_custom_type_script = "uid://dl171wpavuwef"
 
 [node name="GameManager" type="Node" unique_id=970100861]
 script = ExtResource("1_wsjqe")
+levels = SubResource("Resource_icdal")
