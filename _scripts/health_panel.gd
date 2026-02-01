@@ -15,6 +15,7 @@ func _ready():
 	SignalController.on_stop_health_change.connect(on_stop_health_change)
 
 func on_health_changed(prev_health : int, new_health : int) -> void:
+	health_label.add_theme_font_size_override("font_size", 35)
 	is_health_being_updated = true
 	health_label.text = str(int(new_health))
 	
@@ -25,5 +26,6 @@ func on_health_changed(prev_health : int, new_health : int) -> void:
 
 func on_stop_health_change() -> void:
 	if is_health_being_updated:
+		health_label.add_theme_font_size_override("font_size", 30)
 		health_label.add_theme_color_override("font_color", default_color)
 		is_health_being_updated = false
