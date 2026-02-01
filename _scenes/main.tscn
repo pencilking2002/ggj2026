@@ -18,7 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://nshtlup5nvom" path="res://_textures/env/Grass07.png" id="8_wot5j"]
 [ext_resource type="Texture2D" uid="uid://fnevjgk8hogb" path="res://_textures/ui/needle.png" id="8_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ncve032or807" path="res://_textures/env/skelehand.png" id="9_sensu"]
+[ext_resource type="Texture2D" uid="uid://curf55pdx4snw" path="res://_textures/env/Larry.png" id="10_potqn"]
 [ext_resource type="Texture2D" uid="uid://cfssy4dqqdlkn" path="res://_textures/env/slimeshadow.png" id="10_wot5j"]
+[ext_resource type="Texture2D" uid="uid://bnv233bglsyc0" path="res://_textures/env/Skull.png" id="11_bas5x"]
+[ext_resource type="Texture2D" uid="uid://cph1oipsgrh4x" path="res://_textures/env/Tire.png" id="12_b5txm"]
 [ext_resource type="Script" uid="uid://bltfbycy87ku5" path="res://_scripts/health_panel.gd" id="19_0ae1l"]
 [ext_resource type="FontFile" uid="uid://bnx8gm72scdvg" path="res://_fonts/Good Old DOS Distorted.ttf" id="19_sensu"]
 [ext_resource type="Texture2D" uid="uid://cgwsnl3suubo5" path="res://_textures/ui/bar1.png" id="20_55hjd"]
@@ -134,7 +137,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_lfnwg")
 
 [node name="Grass07" type="Sprite2D" parent="Ground" unique_id=1603290558]
-position = Vector2(-434, -90)
+position = Vector2(-436, -83)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_wot5j")
 
@@ -142,6 +145,21 @@ texture = ExtResource("8_wot5j")
 position = Vector2(-234, -122)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_sensu")
+
+[node name="Larry" type="Sprite2D" parent="Ground" unique_id=372845925]
+position = Vector2(343, -578)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_potqn")
+
+[node name="Skull" type="Sprite2D" parent="Ground" unique_id=73865100]
+position = Vector2(-685, -98)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_bas5x")
+
+[node name="Tire" type="Sprite2D" parent="Ground" unique_id=1647448903]
+position = Vector2(-737, 74)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_b5txm")
 
 [node name="Slimeshadow" type="Sprite2D" parent="." unique_id=1268009067]
 position = Vector2(-665, -326.00003)
