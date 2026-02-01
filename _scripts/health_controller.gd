@@ -4,17 +4,17 @@ class_name HealthController
 @export var hurt_speed : float = 4.0
 @export var max_health : float = 500.0
 var health : float
+var delta_time : float
 
 func _ready():
+	# Set the player's health at the start of the game
 	set_health(max_health)
 
-func decrement_health(delta : float):
+func decrement_health():
 	var prev_health : float = health
-	health -= delta * hurt_speed
+	health -= get_process_delta_time() * hurt_speed
 	health = clamp(health,0, max_health)
 	SignalController.on_health_changed.emit(prev_health, health)
-	print("prev health : ", prev_health)
-	print("new health : ", health)
 	
 	if health == 0.0:
 		SignalController.on_game_over.emit()

@@ -28,11 +28,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("confirm"):
 		handle_confirm()
 	
+func _process(_delta: float):
 	if is_looking_at_toxic_item():
-		health_controller.decrement_health(delta)
+		health_controller.decrement_health()
 	else:
 		health_controller.stop_health_change()
-
+		
 # Handle user input for collecting items 
 func handle_confirm() -> void:
 	if has_items():
