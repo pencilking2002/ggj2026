@@ -9,7 +9,11 @@ var delta_time : float
 
 func _ready():
 	# Set the player's health at the start of the game
-	set_health(max_health)
+	if GameManager.curr_level_index == 3:
+		set_health(50)
+	else:
+		set_health(max_health)
+		
 	SignalController.on_pickup_toxic_item.connect(pickup_toxic_item)
 	SignalController.on_pickup_health_item.connect(pickup_health_item)
 
