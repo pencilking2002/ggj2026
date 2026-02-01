@@ -3,6 +3,8 @@ extends Node
 var player : Player
 @export var curr_level_index : int = 0
 @export var levels : Levels
+@export var tutorial_data : Array[TutorialData]
+
 const mission_complete_scene : PackedScene = preload("res://_scenes/mission_complete.tscn")
 const win_scene : PackedScene = preload("res://_scenes/you_win.tscn")
 
@@ -62,7 +64,16 @@ func get_num_worms_in_level() -> int:
 				num_worms += 1
 	
 	return num_worms
-					
+
+func get_tutorial_data_for_level(level: int) -> TutorialData:
+	return tutorial_data[level]
+						
+func get_tutorial_data_for_curr_level() -> TutorialData:
+	if tutorial_data.size() - 1 > curr_level_index:
+		return get_tutorial_data_for_level(curr_level_index)
+	else:
+		return null
+	
 func show_mission_complete() -> void:
 	var mission_complete_instance := mission_complete_scene.instantiate()
 	get_tree().current_scene.add_child(mission_complete_instance)

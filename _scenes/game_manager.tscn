@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://yomcwst8imwm" path="res://_scripts/game_manager.gd" id="1_wsjqe"]
 [ext_resource type="Script" uid="uid://dl171wpavuwef" path="res://_resources/levels.gd" id="2_1uqvo"]
+[ext_resource type="Script" uid="uid://d0c60uywrsn55" path="res://_scripts/tutorial_data.gd" id="3_vsnlp"]
+[ext_resource type="Resource" uid="uid://ban0yh5hq5jt1" path="res://_resources/tutorial_data/level_01.tres" id="4_q0dph"]
+[ext_resource type="Resource" uid="uid://y8q2lnjdpp63" path="res://_resources/tutorial_data/level_02.tres" id="5_q0dph"]
+[ext_resource type="Resource" uid="uid://c24u5bgr2ql6f" path="res://_resources/tutorial_data/level_03.tres" id="6_cviam"]
+[ext_resource type="Resource" uid="uid://uhrnxibqym11" path="res://_resources/tutorial_data/level_04.tres" id="7_geeev"]
+[ext_resource type="Resource" uid="uid://dtxbdx1tho4hu" path="res://_resources/tutorial_data/level_05.tres" id="8_y3vn3"]
+[ext_resource type="Resource" uid="uid://bi7exdeghv568" path="res://_resources/tutorial_data/level_06.tres" id="9_nufkd"]
 
 [sub_resource type="Resource" id="Resource_icdal"]
 script = ExtResource("2_1uqvo")
@@ -10,3 +17,4 @@ metadata/_custom_type_script = "uid://dl171wpavuwef"
 [node name="GameManager" type="Node" unique_id=970100861]
 script = ExtResource("1_wsjqe")
 levels = SubResource("Resource_icdal")
+tutorial_data = Array[ExtResource("3_vsnlp")]([ExtResource("4_q0dph"), ExtResource("5_q0dph"), ExtResource("6_cviam"), ExtResource("7_geeev"), ExtResource("8_y3vn3"), ExtResource("9_nufkd")])

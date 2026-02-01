@@ -8,6 +8,7 @@ class_name Player
 @export var health_controller : HealthController
 
 var curr_items : Array[SpottableItem]
+var has_moved : bool
 
 func _ready() -> void:
 	# Connect to signals for spotting items
@@ -18,6 +19,10 @@ func _physics_process(delta: float) -> void:
 	# Get movement direction from player input
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
+	if not has_moved and direction.length() > 0.1:
+		has_moved = true
+		SignalController.on_player_first_move.emit()
+		
 	# Get a target velicty based on direction and move_speed
 	var target_velocity := direction * move_speed * delta * 1000.0
 	

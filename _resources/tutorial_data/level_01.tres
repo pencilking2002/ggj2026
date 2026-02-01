@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialData" format=3 uid="uid://ban0yh5hq5jt1"]
+
+[ext_resource type="Script" uid="uid://d0c60uywrsn55" path="res://_scripts/tutorial_data.gd" id="1_7d6fh"]
+
+[resource]
+script = ExtResource("1_7d6fh")
+data = Array[String](["Must find Worms. Use WASD to move around."])
+metadata/_custom_type_script = "uid://d0c60uywrsn55"

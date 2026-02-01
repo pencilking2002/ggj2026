@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba0sn1c0nqv61"]
 
 [ext_resource type="Script" uid="uid://cg5jnedyonhyj" path="res://_scripts/worm.gd" id="1_n80vc"]
-[ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://_resources/Worms/worm_settings.tres" id="2_x1856"]
+[ext_resource type="Resource" uid="uid://dph0mie47lxod" path="res://_resources/worm_settings.tres" id="2_x1856"]
 [ext_resource type="Shader" uid="uid://bgc4d18gkedil" path="res://_shaders/highlight.gdshader" id="3_ttset"]
 [ext_resource type="Texture2D" uid="uid://cpmqojcm4gfi1" path="res://_textures/worm/pop up/final-1.png" id="4_jgcky"]
 [ext_resource type="Texture2D" uid="uid://btx1ke5f5yxcm" path="res://_textures/worm/pop up/final-2.png" id="5_8p47o"]
@@ -22,6 +22,11 @@ shader_parameter/blink_strength = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttset"]
 size = Vector2(86, 138)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgcky"]
+shader = ExtResource("3_ttset")
+shader_parameter/highlight_color = Color(0.35689738, 0.2579848, 0.088079296, 1)
+shader_parameter/blink_strength = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_60o28"]
 animations = [{
@@ -65,16 +70,23 @@ animations = [{
 "texture": ExtResource("14_fejak")
 }],
 "loop": false,
-"name": &"wormup",
+"name": &"emerge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_evg77")
+}],
+"loop": false,
+"name": &"idle",
 "speed": 10.0
 }]
 
-[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("animator", "sprite") groups=["worms"]]
+[node name="Worm" type="Node2D" unique_id=952066793 node_paths=PackedStringArray("anim_sprite") groups=["worms"]]
 material = SubResource("ShaderMaterial_ttset")
 script = ExtResource("1_n80vc")
-animator = NodePath("")
 worm_settings = ExtResource("2_x1856")
-sprite = NodePath("")
+anim_sprite = NodePath("AnimatedSprite2D")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=590163756]
 position = Vector2(9, -115)
@@ -84,9 +96,8 @@ position = Vector2(-5, 46)
 shape = SubResource("RectangleShape2D_ttset")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=503673576]
-position = Vector2(10, -55.000004)
+material = SubResource("ShaderMaterial_jgcky")
+position = Vector2(13, -72)
 scale = Vector2(0.45898435, 0.45898435)
 sprite_frames = SubResource("SpriteFrames_60o28")
-animation = &"wormup"
-frame = 10
-frame_progress = 1.0
+animation = &"idle"

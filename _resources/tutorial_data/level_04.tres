@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialData" format=3 uid="uid://uhrnxibqym11"]
+
+[ext_resource type="Script" uid="uid://d0c60uywrsn55" path="res://_scripts/tutorial_data.gd" id="1_2ti7c"]
+
+[resource]
+script = ExtResource("1_2ti7c")
+data = Array[String](["Too much radiation. Need to find healing."])
+metadata/_custom_type_script = "uid://d0c60uywrsn55"

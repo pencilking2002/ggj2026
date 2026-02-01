@@ -2,8 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/_scenes/Desktop/Projects/Godot/godot-csharp-essentials" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/_scenes/Desktop/Projects/Jekyll/ga_tut" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/_scenes/Desktop/Repos/first-law-original" vcs="Git" />
   </component>
 </project>

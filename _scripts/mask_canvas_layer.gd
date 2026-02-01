@@ -1,9 +1,9 @@
 extends CanvasLayer
 class_name MaskCanvasLayer
 
-@export var is_mask_enabled : bool = true
 @export var color_rect: ColorRect
-@export var timer: Timer
+@export var tutorial_text : Label
+@export var is_mask_enabled : bool = true
 @export var eye_radius_reduce_rate := 8.0
 @export var eye_falloff_reduce_rate := 2.0
 @export var fade_in_eye_radius_duration := 1.0
@@ -15,6 +15,7 @@ static var eye_falloff_str: String = "eye_falloff"
 var color_rect_mat: Material
 
 func _ready() -> void:
+	SignalController.on_player_first_move.connect(player_first_move)
 	SoundManager.play_level_music()
 	if not is_mask_enabled:
 		visible = false
@@ -27,7 +28,19 @@ func _ready() -> void:
 		
 		# Animate the volume of the gas mask breathing
 		SoundManager.play_sound_mask_with_ramp_up(breath_audio_fade_in_duration)
+		
+		# Start tutorial text
+		var data : TutorialData = GameManager.get_tutorial_data_for_curr_level()
+		if data:
+			tutorial_text.text = data.data[0]
 
+func player_first_move() -> void:
+	await get_tree().create_timer(5.0).timeout
+	var tween : Tween = create_tween()
+	tween.tween_property(tutorial_text, "modulate:a", 0.0, 2.0)
+	await get_tree().create_timer(2.0).timeout
+	tutorial_text.text = ""
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	# reduce_eye_radius(delta)

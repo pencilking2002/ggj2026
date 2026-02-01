@@ -3,7 +3,7 @@ class_name SpottableItem
 
 
 @export var sprite : Sprite2D
-
+@export var anim_sprite : AnimatedSprite2D
 var is_toxic : bool
 
 var sprite_mat : ShaderMaterial
@@ -13,7 +13,8 @@ static var blink_strength_str : StringName = &"blink_strength"
 func init() -> void:
 	if sprite:
 		sprite_mat = sprite.material
-		print ("Set sprite mat ", name)
+	elif anim_sprite:
+		sprite_mat = anim_sprite.material
 	else:
 		print("Pickup: Sprite is not defined")
 

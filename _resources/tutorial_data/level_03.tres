@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialData" format=3 uid="uid://c24u5bgr2ql6f"]
+
+[ext_resource type="Script" uid="uid://d0c60uywrsn55" path="res://_scripts/tutorial_data.gd" id="1_3vrs3"]
+
+[resource]
+script = ExtResource("1_3vrs3")
+data = Array[String](["Need to find 3 more worms."])
+metadata/_custom_type_script = "uid://d0c60uywrsn55"

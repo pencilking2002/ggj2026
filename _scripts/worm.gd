@@ -1,6 +1,5 @@
 class_name Worm extends SpottableItem
 
-@export var animator: AnimationPlayer
 @export var worm_settings:WormSettings
 @export var is_idle_state_only : bool
 var idle_duration : float
@@ -22,7 +21,8 @@ enum WormStateEnum {
 
 func _ready():
 	init()
-	animator.play("idle")
+	#animator.play("idle")
+	anim_sprite.play("idle")
 	idle_duration = worm_settings.idle_duration + randf_range(0, worm_settings.idle_duration_variance)
 	
 func set_state(input_state: WormStateEnum) -> void:
@@ -45,23 +45,34 @@ func update_worm_state() -> void:
 	elif worm_state == WormStateEnum.SUBMERGED && time_elapsed > last_dive_time + worm_settings.submerged_duration:
 		set_state(WormStateEnum.EMERGING)
 		last_emerge_time = time_elapsed
-		sprite.show()
-		animator.play("idle")
+		show_sprite()
+		anim_sprite.play("emerge")
 		position = get_random_point()
 	elif worm_state == WormStateEnum.EMERGING && time_elapsed > last_emerge_time + worm_settings.emerge_duration:
 		set_state(WormStateEnum.IDLE)
 		last_emerge_time = time_elapsed
-		sprite.show()
-		animator.play("idle")
+		show_sprite()
+		anim_sprite.play("idle")
 	elif worm_state == WormStateEnum.IDLE and time_elapsed > last_emerge_time + idle_duration:
 		set_state(WormStateEnum.DIVING)
 		last_dive_time = time_elapsed
-		animator.play("dive")
+		anim_sprite.play("dive")
 	elif worm_state == WormStateEnum.DIVING && time_elapsed > last_dive_time + worm_settings.dive_duration:
 		set_state(WormStateEnum.SUBMERGED)
 		last_dive_time = time_elapsed
-		sprite.hide()
+		hide_sprite()
 
+func show_sprite() -> void:
+	if sprite:
+		sprite.show()
+	elif anim_sprite:
+		anim_sprite.show()
+
+func hide_sprite() -> void:
+	if sprite:
+		sprite.hide()
+	elif anim_sprite:
+		anim_sprite.hide()
 # Requests a random position from SpwmPointController
 func get_random_point() -> Vector2:
 	var nodes: Array[Node] = get_tree().get_nodes_in_group("spawn_area")

@@ -7,3 +7,4 @@ signal on_stop_health_change
 signal on_game_over
 signal on_win_level
 signal on_check_win_condition
+signal on_player_first_move

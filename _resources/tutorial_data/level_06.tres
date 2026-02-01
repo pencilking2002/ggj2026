@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialData" format=3 uid="uid://bi7exdeghv568"]
+
+[ext_resource type="Script" uid="uid://d0c60uywrsn55" path="res://_scripts/tutorial_data.gd" id="1_81fpt"]
+
+[resource]
+script = ExtResource("1_81fpt")
+data = Array[String](["Just 3 more and I'm done."])
+metadata/_custom_type_script = "uid://d0c60uywrsn55"
