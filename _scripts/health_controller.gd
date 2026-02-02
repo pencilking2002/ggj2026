@@ -25,7 +25,7 @@ func decrement_health():
 	
 	# Play gieger click every time 1.0 health is removed
 	if fmod(health, 1.0) < 0.01:
-		SoundManager.play_sound_geiger_single(0.2)	
+		SoundManager.play_sound_geiger_single(0.1)	
 	
 	if health == 0.0:
 		do_gameover()
